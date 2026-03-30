@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Propuesta de Obra &mdash; Casa 2026 | Olivewood &amp; Grupo Alefant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1B3049;
+            --steel: #3D5A80;
+            --gold: #C9A96E;
+            --pearl: #F0EDEA;
+            --graphite: #2C2C2C;
+            --white: #FFFFFF;
+            --green: #2D8A56;
+            --red-soft: #C0392B;
+            --light-gold: rgba(201, 169, 110, 0.12);
+            --shadow: 0 4px 24px rgba(27, 48, 73, 0.08);
+            --shadow-lg: 0 8px 48px rgba(27, 48, 73, 0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--graphite);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ═══ HEADER ═══ */
+        .header {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 100%);
+            color: var(--white);
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold);
+        }
+
+        .header-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .header-logos svg {
+            height: 60px;
+            width: auto;
+        }
+
+        .header-logos .separator {
+            width: 1px;
+            height: 50px;
+            background: rgba(255,255,255,0.3);
+        }
+
+        .header h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-style: italic;
+            opacity: 0.85;
+            margin-bottom: 1.5rem;
+        }
+
+        .header-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            opacity: 0.75;
+        }
+
+        .header-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* ═══ SAVINGS BANNER ═══ */
+        .savings-banner {
+            background: linear-gradient(135deg, #f8f6f3 0%, var(--pearl) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .savings-banner h2 {
+            font-family: 'Archivo Black', sans-serif;
+            color: var(--navy);
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            margin-bottom: 2rem;
+            letter-spacing: 0.02em;
+        }
+
+        .savings-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .savings-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            box-shadow: var(--shadow);
+            border-top: 3px solid var(--gold);
+            transition: transform 0.2s ease;
+        }
+
+        .savings-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .savings-card .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--steel);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .savings-card .amount {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.6rem;
+            color: var(--green);
+        }
+
+        .savings-card .amount.total {
+            font-size: 2rem;
+            color: var(--navy);
+        }
+
+        .savings-card .pct {
+            font-size: 0.85rem;
+            color: var(--steel);
+            margin-top: 0.3rem;
+        }
+
+        .savings-card.highlight {
+            background: var(--navy);
+            border-top-color: var(--gold);
+        }
+
+        .savings-card.highlight .label {
+            color: var(--gold);
+        }
+
+        .savings-card.highlight .amount {
+            color: var(--white);
+        }
+
+        .savings-card.highlight .pct {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ═══ SECTIONS ═══ */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: var(--white);
+        }
+
+        .section-header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .section-header:hover {
+            background: var(--steel);
+        }
+
+        .section-header h3 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .section-header .section-summary {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .section-header .badge {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+
+        .section-header .chevron {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+            fill: var(--white);
+        }
+
+        .section.open .chevron {
+            transform: rotate(180deg);
+        }
+
+        .section-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .section.open .section-body {
+            max-height: 5000px;
+        }
+
+        .section-content {
+            padding: 1.5rem;
+        }
+
+        /* ═══ COMPARISON TABLE ═══ */
+        .comparison-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-group h4 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--steel);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--pearl);
+            margin-bottom: 1rem;
+        }
+
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+
+        .comp-table thead th {
+            background: var(--pearl);
+            padding: 0.7rem 0.8rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--steel);
+            white-space: nowrap;
+        }
+
+        .comp-table thead th:nth-child(n+2) {
+            text-align: right;
+        }
+
+        .comp-table tbody td {
+            padding: 0.7rem 0.8rem;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+
+        .comp-table tbody td:nth-child(n+2) {
+            text-align: right;
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .comp-table tbody tr.changed {
+            background: var(--light-gold);
+        }
+
+        .comp-table tbody tr.removed {
+            background: rgba(192, 57, 43, 0.06);
+        }
+
+        .comp-table tbody td .desc {
+            font-size: 0.78rem;
+            color: #888;
+            margin-top: 0.2rem;
+            line-height: 1.4;
+        }
+
+        .comp-table tbody td .change-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.15rem 0.5rem;
+            border-radius: 10px;
+            margin-left: 0.3rem;
+        }
+
+        .change-badge.savings {
+            background: rgba(45, 138, 86, 0.12);
+            color: var(--green);
+        }
+
+        .change-badge.removed {
+            background: rgba(192, 57, 43, 0.1);
+            color: var(--red-soft);
+        }
+
+        .change-badge.courtesy {
+            background: rgba(201, 169, 110, 0.2);
+            color: #96792E;
+        }
+
+        /* ═══ TOTALS ROW ═══ */
+        .totals-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            background: var(--pearl);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .totals-table td {
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .totals-table td:first-child {
+            text-align: right;
+            color: var(--steel);
+            font-weight: 500;
+            width: 50%;
+        }
+
+        .totals-table td:nth-child(2),
+        .totals-table td:nth-child(3) {
+            text-align: right;
+            font-weight: 600;
+            font-variant-numeric: tabular-nums;
+            width: 25%;
+        }
+
+        .totals-table tr.grand-total {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .totals-table tr.grand-total td {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.1rem;
+            padding: 0.8rem 1rem;
+        }
+
+        .totals-table tr.savings-row td {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        /* ═══ BAR CHART ═══ */
+        .bar-chart {
+            margin: 2rem 0;
+        }
+
+        .bar-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .bar-item .bar-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bar-track {
+            height: 32px;
+            background: var(--pearl);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .bar-fill.original {
+            background: var(--steel);
+            opacity: 0.5;
+        }
+
+        .bar-fill.adjusted {
+            background: var(--navy);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* ═══ FOOTER ═══ */
+        .footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .footer .footer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+
+        .footer .footer-logos svg {
+            height: 30px;
+        }
+
+        /* ═══ RESPONSIVE ═══ */
+        @media (max-width: 768px) {
+            .header { padding: 2rem 1rem 1.5rem; }
+            .header-logos svg { height: 40px; }
+            .header-logos .separator { height: 35px; }
+            .header-meta { flex-direction: column; gap: 0.5rem; }
+            .savings-cards { grid-template-columns: repeat(2, 1fr); }
+            .section-header { flex-direction: column; gap: 0.8rem; text-align: center; }
+            .section-header .section-summary { flex-wrap: wrap; justify-content: center; }
+            .comp-table { font-size: 0.8rem; }
+            .comp-table thead th, .comp-table tbody td { padding: 0.5rem 0.4rem; }
+            .totals-table td { font-size: 0.8rem; padding: 0.5rem 0.6rem; }
+            .container { padding: 1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .savings-cards { grid-template-columns: 1fr; }
+            .comp-table { display: block; overflow-x: auto; }
+        }
+
+        /* ═══ ANIMATIONS ═══ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ═══ NOTES ═══ */
+        .notes {
+            background: var(--pearl);
+            border-radius: 8px;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+            font-size: 0.85rem;
+            color: var(--steel);
+        }
+
+        .notes h4 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 0.85rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .notes ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .notes ul li {
+            padding: 0.2rem 0;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .notes ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 2.5rem 0;
+            color: var(--gold);
+            font-size: 1.5rem;
+            letter-spacing: 0.5rem;
+        }
+
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 1rem;
+        }
+
+        .print-btn:hover {
+            background: var(--navy);
+            color: var(--gold);
+        }
+
+        @media print {
+            .section-body { max-height: none !important; }
+            .section-header .chevron { display: none; }
+            .print-btn { display: none; }
+            .header { break-after: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="header">
+    <div class="header-logos">
+        <!-- Olivewood Logo (simplified) -->
+        <svg viewBox="0 0 300 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="35" r="26" stroke="white" stroke-width="3" fill="none"/>
+            <rect x="25" y="12" width="10" height="46" rx="2" fill="white"/>
+            <rect x="20" y="18" width="5" height="34" rx="1" fill="white" opacity="0.6"/>
+            <text x="68" y="42" font-family="'DM Sans', sans-serif" font-weight="700" font-size="28" fill="white" letter-spacing="2">OLIVEWOOD</text>
+        </svg>
+        <div class="separator"></div>
+        <!-- Grupo Alefant Logo (simplified) -->
+        <svg viewBox="0 0 300 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M35 15 C20 15, 8 28, 12 42 C14 50, 22 55, 30 55 L50 55 C48 50, 42 48, 38 46 C55 44, 60 35, 55 25 C52 19, 44 15, 35 15Z" stroke="white" stroke-width="1.5" fill="none"/>
+            <path d="M12 42 C10 38, 10 32, 15 28 L8 35" stroke="white" stroke-width="1.5" fill="none"/>
+            <path d="M35 30 L28 35 L35 33" stroke="white" stroke-width="1" fill="none" opacity="0.6"/>
+            <text x="68" y="30" font-family="'DM Sans', sans-serif" font-weight="400" font-size="12" fill="white" letter-spacing="4" opacity="0.7">GRUPO</text>
+            <text x="68" y="50" font-family="'Archivo Black', sans-serif" font-weight="700" font-size="24" fill="white" letter-spacing="2">ALEFANT</text>
+        </svg>
+    </div>
+    <h1>Propuesta de Obra &mdash; Casa 2026</h1>
+    <p class="subtitle">Dise&ntilde;amos lo que te imaginas&hellip; y lo hacemos realidad</p>
+    <div class="header-meta">
+        <span>Cotizaci&oacute;n N&deg; SJ-005</span>
+        <span>30 de Marzo de 2026</span>
+        <span>Cliente: Sr. Julio</span>
+    </div>
+</header>
+
+<!-- ═══ SAVINGS BANNER ═══ -->
+<section class="savings-banner">
+    <h2>Resumen de Ahorro &mdash; Propuesta Ajustada</h2>
+    <div class="savings-cards">
+        <div class="savings-card highlight fade-in">
+            <div class="label">Ahorro Total</div>
+            <div class="amount total">$234,771</div>
+            <div class="pct">8.8% de ahorro sobre el presupuesto original</div>
+        </div>
+        <div class="savings-card fade-in">
+            <div class="label">Construcci&oacute;n Piscina</div>
+            <div class="amount">-$33,032</div>
+            <div class="pct">2.6%</div>
+        </div>
+        <div class="savings-card fade-in">
+            <div class="label">Cubierta Piscina</div>
+            <div class="amount">-$156,872</div>
+            <div class="pct">23.6%</div>
+        </div>
+        <div class="savings-card fade-in">
+            <div class="label">Ba&ntilde;o Alberca</div>
+            <div class="amount">-$14,553</div>
+            <div class="pct">6.4%</div>
+        </div>
+        <div class="savings-card fade-in">
+            <div class="label">Medio Ba&ntilde;o Patio</div>
+            <div class="amount">-$18,328</div>
+            <div class="pct">8.2%</div>
+        </div>
+        <div class="savings-card fade-in">
+            <div class="label">Loseta Cer&aacute;mica</div>
+            <div class="amount">-$11,986</div>
+            <div class="pct">4.2%</div>
+        </div>
+    </div>
+    <button class="print-btn" onclick="window.print()">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M4 1v3H1.5A1.5 1.5 0 000 5.5v5A1.5 1.5 0 001.5 12H4v3h8v-3h2.5a1.5 1.5 0 001.5-1.5v-5A1.5 1.5 0 0014.5 4H12V1H4zm1 3V2h6v2H5zm6 7v3H5v-3h6z"/></svg>
+        Imprimir / Guardar PDF
+    </button>
+</section>
+
+<!-- ═══ VISUAL CHART ═══ -->
+<div class="container">
+    <div class="bar-chart fade-in">
+        <div class="bar-item">
+            <div class="bar-label">
+                <span>Construcci&oacute;n Piscina</span>
+                <span style="color:var(--green)">-$33,032</span>
+            </div>
+            <div class="bar-track">
+                <div class="bar-fill original" style="width:100%"></div>
+                <div class="bar-fill adjusted" style="width:97.4%">$1,229,726</div>
+            </div>
+        </div>
+        <div class="bar-item">
+            <div class="bar-label">
+                <span>Cubierta Piscina</span>
+                <span style="color:var(--green)">-$156,872</span>
+            </div>
+            <div class="bar-track">
+                <div class="bar-fill original" style="width:52.6%"></div>
+                <div class="bar-fill adjusted" style="width:40.2%">$507,328</div>
+            </div>
+        </div>
+        <div class="bar-item">
+            <div class="bar-label">
+                <span>Ba&ntilde;o Alberca</span>
+                <span style="color:var(--green)">-$14,553</span>
+            </div>
+            <div class="bar-track">
+                <div class="bar-fill original" style="width:18%"></div>
+                <div class="bar-fill adjusted" style="width:16.9%">$212,965</div>
+            </div>
+        </div>
+        <div class="bar-item">
+            <div class="bar-label">
+                <span>Medio Ba&ntilde;o Patio</span>
+                <span style="color:var(--green)">-$18,328</span>
+            </div>
+            <div class="bar-track">
+                <div class="bar-fill original" style="width:17.8%"></div>
+                <div class="bar-fill adjusted" style="width:16.4%">$206,439</div>
+            </div>
+        </div>
+        <div class="bar-item">
+            <div class="bar-label">
+                <span>Loseta Cer&aacute;mica Patio</span>
+                <span style="color:var(--green)">-$11,986</span>
+            </div>
+            <div class="bar-track">
+                <div class="bar-fill original" style="width:22.5%"></div>
+                <div class="bar-fill adjusted" style="width:21.6%">$271,999</div>
+            </div>
+        </div>
+    </div>
+    <p style="text-align:center;font-size:0.78rem;color:var(--steel);margin-top:-0.5rem;">
+        <span style="display:inline-block;width:12px;height:12px;background:var(--steel);opacity:0.5;border-radius:3px;vertical-align:middle;margin-right:4px;"></span> Original
+        &nbsp;&nbsp;
+        <span style="display:inline-block;width:12px;height:12px;background:var(--navy);border-radius:3px;vertical-align:middle;margin-right:4px;"></span> Ajustada
+    </p>
+</div>
+
+<div class="divider">&bull; &bull; &bull;</div>
+
+<!-- ═══ SECTION 1: CONSTRUCCION PISCINA ═══ -->
+<div class="container">
+
+<div class="section open fade-in" id="sec-piscina">
+    <div class="section-header" onclick="toggleSection('sec-piscina')">
+        <h3>1. Construcci&oacute;n de Piscina</h3>
+        <div class="section-summary">
+            <span>Original: $1,262,758</span>
+            <span>Ajustada: $1,229,726</span>
+            <span class="badge">Ahorro: $33,032</span>
+            <svg class="chevron" viewBox="0 0 20 20"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </div>
+    </div>
+    <div class="section-body">
+        <div class="section-content">
+            <div class="comparison-group">
+                <h4>Obra Civil</h4>
+                <table class="comp-table">
+                    <thead><tr><th>Concepto</th><th>Cant.</th><th>Original</th><th>Ajustada</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>Construcci&oacute;n de piscina de 10.00 x 4.00 x 1.40 m<div class="desc">Excavaci&oacute;n, preparaci&oacute;n del terreno, concreto armado con impermeabilizante integral. Escalera de acceso, cuarto de m&aacute;quinas, muros, losa, acabados b&aacute;sicos. Llave en mano en etapa estructural.</div></td>
+                            <td>1 Lote</td>
+                            <td><strong>$582,492</strong></td>
+                            <td><strong>$582,492</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="comparison-group">
+                <h4>Acabados de Piscina</h4>
+                <table class="comp-table">
+                    <thead><tr><th>Concepto</th><th>Cant.</th><th>P.U. Orig.</th><th>Total Orig.</th><th>P.U. Ajust.</th><th>Total Ajust.</th></tr></thead>
+                    <tbody>
+                        <tr class="changed">
+                            <td>Mosaico veneciano azul MCA Kolorines <span class="change-badge savings">-$28,476</span><div class="desc">Asentado con pega mosaicos venecianos. Incluye preparaci&oacute;n de superficie, junteado con boquilla de 2 mm impermeable antihongo.</div></td>
+                            <td>75 m2</td>
+                            <td>$1,499</td>
+                            <td><strong>$112,476</strong></td>
+                            <td>$1,120</td>
+                            <td><strong>$84,000</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Cantera gris 40x40 en muro de cascada<div class="desc">Incluye preparaci&oacute;n de superficie, junteado con boquilla de 2 mm.</div></td>
+                            <td>30 m2</td>
+                            <td>$1,252</td>
+                            <td><strong>$37,578</strong></td>
+                            <td>$1,252</td>
+                            <td><strong>$37,578</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Banqueta perimetral concreto armado F'c=150 kg/cm2<div class="desc">Acabado martelinado, medidas .40x10 mts.</div></td>
+                            <td>1 Lote</td>
+                            <td>$1,252</td>
+                            <td><strong>$59,060</strong></td>
+                            <td>$1,252</td>
+                            <td><strong>$59,060</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Pintura vin&iacute;lica para muros de piscina <span class="change-badge courtesy">Cortes&iacute;a</span><div class="desc">Preparaci&oacute;n de superficie y aplicaci&oacute;n de sellador.</div></td>
+                            <td>69 m2</td>
+                            <td>$137</td>
+                            <td><strong>$0</strong></td>
+                            <td>$137</td>
+                            <td><strong>$0</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="comparison-group">
+                <h4>Instalaciones Hidrosanitarias</h4>
+                <table class="comp-table">
+                    <thead><tr><th>Concepto</th><th>Cant.</th><th>Original</th><th>Ajustada</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>Red hidr&aacute;ulica y sanitaria para piscina<div class="desc">Tuber&iacute;a 1 1/2" para dren, aspirado y retornos. L&iacute;nea hidr&aacute;ulica PPR 20 mm, sanitaria PVC 6" con v&aacute;lvula check.</div></td>
+                            <td>1 Lote</td>
+                            <td><strong>$28,678</strong></td>
+                            <td><strong>$28,678</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Adecuaci&oacute;n y reubicaci&oacute;n de l&iacute;nea sanitaria <span class="change-badge courtesy">Cortes&iacute;a</span><div class="desc">PVC de 6", registro de aguas residuales 40x60 cm, v&aacute;lvula check antiretorno.</div></td>
+                            <td>1 Lote</td>
+                            <td><strong>$0</strong></td>
+                            <td><strong>$0</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="comparison-group">
+                <h4>Herrer&iacute;a / Instalaci&oacute;n El&eacute;ctrica / Equipamiento</h4>
+                <table class="comp-table">
+                    <thead><tr><th>Concepto</th><th>Cant.</th><th>Original</th><th>Ajustada</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>Puerta tipo louver para cuarto de m&aacute;quinas<div class="desc">Ventilaci&oacute;n y protecci&oacute;n de equipo. Incluye primer y pintura anticorrosiva.</div></td>
+                            <td>1 Pza</td>
+                            <td><strong>$21,947</strong></td>
+                            <td><strong>$21,947</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Sistema el&eacute;ctrico para piscina<div class="desc">Transformador 120V a 12V, luminarias LED sumergibles, cajas de registro y centro de carga. LED de bajo voltaje para &aacute;reas h&uacute;medas.</div></td>
+                            <td>1 Lote</td>
+                            <td><strong>$43,784</strong></td>
+                            <td><strong>$43,784</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Equipo completo de operaci&oacute;n<div class="desc">Bomba 1.0 HP Power Flow, filtro arena s&iacute;lica 18", clorador en l&iacute;nea, cascada acero inoxidable 12", calentador 90,000 BTUs Hayward, cubierta t&eacute;rmica burbuja.</div></td>
+                            <td>1 Lote</td>
+                            <td><strong>$196,247</strong></td>
+                            <td><strong>$196,247</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="comparison-group">
+                <h4>Limpieza y Otros</h4>
+                <table class="comp-table">
+                    <thead><tr><th>Concepto</th><th>Cant.</th><th>Original</th><th>Ajustada</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>Limpieza final de obra</td>
+                            <td>1 Jor</td>
+                            <td><strong>$6,323</strong></td>
+                            <td><strong>$6,323</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Sembrado de pasto natural tipo Cuernavaca <span class="change-badge courtesy">Cortes&iacute;a</span><div class="desc">Nivelaci&oacute;n de terreno, abonado y preparaci&oacute;n.</div></td>
+                            <td>1 Lote</td>
+                            <td><strong>$0</strong></td>
+                            <td><strong>$0</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <table class="totals-table">
+                <tr><td>Subtotal</td><td>$1,088,585</td><td>$1,060,109</td></tr>
+                <tr><td>IVA (16%)</td><td>$174,173</td><td>$169,617</td></tr>
+                <tr class="grand-total"><td>Total Inversi&oacute;n</td><td>$1,262,758</td><td>$1,229,726</td></tr>
+                <tr class="savings-row"><td>Ahorro</td><td colspan="2">$33,032 (2.6%)</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ SECTION 2: CUBIERTA PISCINA ═══ -->
+<div class="section fade-in" id="sec-cubierta">
+    <div class="section-header" onclick="toggleSection('sec-cubierta')">
+        <h3>2. Cubierta Piscina</h3>
+        <div class="section-summary">
+            <span>Original: $664,200</span>
+            <span>Ajustada: $507,328</span>
+            <span class="badge">Ahorro: $156,872</span>
+            <svg class="chevron" viewBox="0 0 20 20"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </div>
+    </div>
+    <div class="section-body">
+        <div class="section-content">
+            <div class="comparison-group">
+                <h4>Herrer&iacute;a</h4>
+                <table class="comp-table">
+                    <thead><tr><th>Concepto</th><th>Cant.</th><th>P.U. Orig.</th><th>Total Orig.</th><th>P.U. Ajust.</th><th>Total Ajust.</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>Estructura met&aacute;lica en color negro para plaf&oacute;n<div class="desc">PTR de 2"x6" y 2"x1". Incluye soldadura, nivelaci&oacute;n, lijado, primer y pintura anticorrosiva. Ajustada: disposici&oacute;n en cuadr&iacute;cula.</div></td>
+                            <td>57 m2</td>
+                            <td>$3,668.2</td>
+                            <td><strong>$209,088</strong></td>
+                            <td>$3,668.2</td>
+                            <td><strong>$209,088</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="comparison-group">
+                <h4>Canceler&iacute;a</h4>
+                <table class="comp-table">
+                    <thead><tr><th>Concepto</th><th>Cant.</th><th>P.U. Orig.</th><th>Total Orig.</th><th>P.U. Ajust.</th><th>Total Ajust.</th></tr></thead>
+                    <tbody>
+                        <tr class="changed">
+                            <td>Cristal templado con filtrasol <span class="change-badge savings">-$59,105</span><div class="desc"><strong>Original:</strong> 9 mm &nbsp;|&nbsp; <strong>Ajustada:</strong> 6 mm. Incluye maniobras, acarreos, cinta norton, sellado.</div></td>
+                            <td>57 M2</td>
+                            <td>$4,385.4</td>
+                            <td><strong>$249,970</strong></td>
+                            <td>$3,348.5</td>
+                            <td><strong>$190,865</strong></td>
+                        </tr>
+                        <tr class="changed">
+                            <td>Puerta corrediza de cristal templado con filtrasol<div class="desc"><strong>Original:</strong> 9 mm &nbsp;|&nbsp; <strong>Ajustada:</strong> 6 mm</div></td>
+                            <td>1 Pza</td>
+                            <td>$34,499</td>
+                            <td><strong>$34,499</strong></td>
+                            <td>$34,499</td>
+                            <td><strong>$34,499</strong></td>
+                        </tr>
+                        <tr class="removed">
+                            <td>Canceler&iacute;a en &aacute;rea de piscina, color negro con ventanas corredizas <span class="change-badge removed">Eliminada</span><div class="desc">14 M2 a $5,437.7/M2. No incluida en propuesta ajustada.</div></td>
+                            <td>14 M2</td>
+                            <td>$5,437.7</td>
+                            <td><strong>$76,129</strong></td>
+                            <td>&mdash;</td>
+                            <td><strong>$0</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="comparison-group">
+                <h4>Limpieza</h4>
+                <table class="comp-table">
+                    <thead><tr><th>Concepto</th><th>Cant.</th><th>Original</th><th>Ajustada</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>Limpieza final de obra</td>
+                            <td>1 Jor</td>
+                            <td><strong>$2,900</strong></td>
+                            <td><strong>$2,900</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <table class="totals-table">
+                <tr><td>Subtotal</td><td>$572,586</td><td>$437,352</td></tr>
+                <tr><td>IVA (16%)</td><td>$91,614</td><td>$69,976</td></tr>
+                <tr class="grand-total"><td>Total Inversi&oacute;n</td><td>$664,200</td><td>$507,328</td></tr>
+                <tr class="savings-row"><td>Ahorro</td><td colspan="2">$156,872 (23.6%)</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ SECTION 3: BAÑO ALBERCA ═══ -->
+<div class="section fade-in" id="sec-bano">
+    <div class="section-header" onclick="toggleSection('sec-bano')">
+        <h3>3. Ba&ntilde;o Alberca</h3>
+        <div class="section-summary">
+            <span>Original: $227,518</span>
+            <span>Ajustada: $212,965</span>
+            <span class="badge">Ahorro: $14,553</span>
+            <svg class="chevron" viewBox="0 0 20 20"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </div>
+    </div>
+    <div class="section-body">
+        <div class="section-content">
+            <div class="comparison-group">
+                <h4>Elaboraci&oacute;n de 1/2 Ba&ntilde;o y &Aacute;rea de Lavado</h4>
+                <table class="comp-table">
+                    <thead><tr><th>Concepto</th><th>Cant.</th><th>Original</th><th>Ajustada</th></tr></thead>
+                    <tbody>
+                        <tr class="changed">
+                            <td>Construcci&oacute;n de 1/2 ba&ntilde;o y adecuaci&oacute;n de &aacute;rea de lavado <span class="change-badge savings">-$12,546</span>
+                                <div class="desc">Demoliciones, instalaciones hidr&aacute;ulicas (Tuboplus) y sanitarias (PVC), firme de concreto, muros y acabados en loseta cer&aacute;mica. WC Castel Zeus, mueble Madik Luo 32" con lavabo, canceler&iacute;a aluminio negro cristal 6 mm.<br><strong>Original:</strong> Puerta Eurovent Serie S-50<br><strong>Ajustada:</strong> Puerta L&iacute;nea Nacional<br>Instalaci&oacute;n el&eacute;ctrica, luminaria, contactos y lavadero.</div>
+                            </td>
+                            <td>1 Lote</td>
+                            <td><strong>$192,837</strong></td>
+                            <td><strong>$180,291</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Limpieza final de obra</td>
+                            <td>1 Jor</td>
+                            <td><strong>$3,300</strong></td>
+                            <td><strong>$3,300</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <table class="totals-table">
+                <tr><td>Subtotal</td><td>$196,137</td><td>$183,591</td></tr>
+                <tr><td>IVA (16%)</td><td>$31,881</td><td>$29,374</td></tr>
+                <tr class="grand-total"><td>Total Inversi&oacute;n</td><td>$227,518</td><td>$212,965</td></tr>
+                <tr class="savings-row"><td>Ahorro</td><td colspan="2">$14,553 (6.4%)</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ SECTION 4: MEDIO BAÑO PATIO ═══ -->
+<div class="section fade-in" id="sec-mediobn">
+    <div class="section-header" onclick="toggleSection('sec-mediobn')">
+        <h3>4. Medio Ba&ntilde;o Patio Principal</h3>
+        <div class="section-summary">
+            <span>Original: $224,767</span>
+            <span>Ajustada: $206,439</span>
+            <span class="badge">Ahorro: $18,328</span>
+            <svg class="chevron" viewBox="0 0 20 20"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </div>
+    </div>
+    <div class="section-body">
+        <div class="section-content">
+            <div class="comparison-group">
+                <h4>Elaboraci&oacute;n de 1/2 Ba&ntilde;o</h4>
+                <table class="comp-table">
+                    <thead><tr><th>Concepto</th><th>Cant.</th><th>Original</th><th>Ajustada</th></tr></thead>
+                    <tbody>
+                        <tr class="changed">
+                            <td>Elaboraci&oacute;n completa de 1/2 ba&ntilde;o <span class="change-badge savings">-$15,800</span>
+                                <div class="desc">Trazo, nivelaci&oacute;n, excavaci&oacute;n, firme de concreto. Acabados: loseta Interceramic Novoa 60x60 en piso, lambr&iacute;n Interceramic Galant Gray 60x60 en muros. Muro divisorio fibrocemento, aislante ac&uacute;stico, impermeabilizaci&oacute;n Fester. WC Castel Zeus, mueble Madik Lugo 32" con lavabo.<br><strong>Original:</strong> Puerta Eurovent Serie S-50 en aluminio obscuro 0.90 x 2.10 m, cristal esmerilado 6 mm. Ventana proyecci&oacute;n Serie AB.<br><strong>Ajustada:</strong> Puerta L&iacute;nea Nacional 3" en aluminio obscuro 0.90 x 2.10 m, cristal esmerilado 6 mm. Ventana proyecci&oacute;n Nacional.<br>Instalaci&oacute;n el&eacute;ctrica, luminaria, pintura acr&iacute;lica, limpieza final y retiro de cascajo.</div>
+                            </td>
+                            <td>1 Lote</td>
+                            <td><strong>$193,765</strong></td>
+                            <td><strong>$177,965</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <table class="totals-table">
+                <tr><td>Subtotal</td><td>$193,765</td><td>$177,965</td></tr>
+                <tr><td>IVA (16%)</td><td>$31,002</td><td>$28,474</td></tr>
+                <tr class="grand-total"><td>Total Inversi&oacute;n</td><td>$224,767</td><td>$206,439</td></tr>
+                <tr class="savings-row"><td>Ahorro</td><td colspan="2">$18,328 (8.2%)</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ SECTION 5: LOSETA CERAMICA ═══ -->
+<div class="section fade-in" id="sec-loseta">
+    <div class="section-header" onclick="toggleSection('sec-loseta')">
+        <h3>5. Colocaci&oacute;n Loseta Cer&aacute;mica en Patio</h3>
+        <div class="section-summary">
+            <span>Original: $283,985</span>
+            <span>Ajustada: $271,999</span>
+            <span class="badge">Ahorro: $11,986</span>
+            <svg class="chevron" viewBox="0 0 20 20"><path d="M5 7l5 5 5-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        </div>
+    </div>
+    <div class="section-body">
+        <div class="section-content">
+            <div class="comparison-group">
+                <h4>Preparaci&oacute;n del Terreno</h4>
+                <table class="comp-table">
+                    <thead><tr><th>Concepto</th><th>Cant.</th><th>Original</th><th>Ajustada</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>Trazo y nivelaci&oacute;n</td>
+                            <td>78 m2</td>
+                            <td><strong>$5,124</strong></td>
+                            <td><strong>$5,124</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Excavaci&oacute;n</td>
+                            <td>11.7 m3</td>
+                            <td><strong>$8,164</strong></td>
+                            <td><strong>$8,164</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Demolici&oacute;n de adoqu&iacute;n</td>
+                            <td>61.5 m2</td>
+                            <td><strong>$11,338</strong></td>
+                            <td><strong>$11,338</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Carga de producto de excavaci&oacute;n y demolici&oacute;n</td>
+                            <td>14 m3</td>
+                            <td><strong>$7,010</strong></td>
+                            <td><strong>$7,010</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Firme de concreto armado</td>
+                            <td>78 m2</td>
+                            <td><strong>$65,677</strong></td>
+                            <td><strong>$65,677</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="comparison-group">
+                <h4>Acabados</h4>
+                <table class="comp-table">
+                    <thead><tr><th>Concepto</th><th>Cant.</th><th>P.U. Orig.</th><th>Total Orig.</th><th>P.U. Ajust.</th><th>Total Ajust.</th></tr></thead>
+                    <tbody>
+                        <tr class="changed">
+                            <td>Loseta cer&aacute;mica en piso <span class="change-badge savings">-$9,048</span>
+                                <div class="desc"><strong>Original:</strong> Interceramic Antartida Vostok Gray, 40 x 60 cm<br><strong>Ajustada:</strong> Interceramic Basilia Blanco/Arena, 40 x 40 cm</div>
+                            </td>
+                            <td>78 m2</td>
+                            <td>$1,424.47</td>
+                            <td><strong>$111,037</strong></td>
+                            <td>$1,307.55</td>
+                            <td><strong>$101,989</strong></td>
+                        </tr>
+                        <tr class="changed">
+                            <td>Zoclo cer&aacute;mico 7.5 cm <span class="change-badge savings">-$1,285</span></td>
+                            <td>34 m</td>
+                            <td>$639.05</td>
+                            <td><strong>$21,728</strong></td>
+                            <td>$601.27</td>
+                            <td><strong>$20,443</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="comparison-group">
+                <h4>Limpieza y Retiro</h4>
+                <table class="comp-table">
+                    <thead><tr><th>Concepto</th><th>Cant.</th><th>Original</th><th>Ajustada</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>Retiro de cascajo de la obra</td>
+                            <td>1 Lote</td>
+                            <td><strong>$9,743</strong></td>
+                            <td><strong>$9,743</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Limpieza final de obra</td>
+                            <td>1 Lote</td>
+                            <td><strong>$4,994</strong></td>
+                            <td><strong>$4,994</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <table class="totals-table">
+                <tr><td>Subtotal</td><td>$244,815</td><td>$234,482</td></tr>
+                <tr><td>IVA (16%)</td><td>$39,170</td><td>$37,517</td></tr>
+                <tr class="grand-total"><td>Total Inversi&oacute;n</td><td>$283,985</td><td>$271,999</td></tr>
+                <tr class="savings-row"><td>Ahorro</td><td colspan="2">$11,986 (4.2%)</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ GRAND TOTAL ═══ -->
+<div class="section fade-in" id="sec-total" style="border: 2px solid var(--gold);">
+    <div class="section-header" style="background: linear-gradient(135deg, var(--navy) 0%, #0f1f30 100%); cursor:default;">
+        <h3 style="font-size:1.3rem;">Resumen Total del Proyecto</h3>
+        <div class="section-summary">
+            <svg class="chevron" viewBox="0 0 20 20" style="opacity:0;"></svg>
+        </div>
+    </div>
+    <div class="section-body" style="max-height:none;">
+        <div class="section-content">
+            <table class="totals-table" style="font-size:1rem;">
+                <tr><td>Construcci&oacute;n de Piscina</td><td>$1,262,758</td><td>$1,229,726</td></tr>
+                <tr><td>Cubierta Piscina</td><td>$664,200</td><td>$507,328</td></tr>
+                <tr><td>Ba&ntilde;o Alberca</td><td>$227,518</td><td>$212,965</td></tr>
+                <tr><td>Medio Ba&ntilde;o Patio</td><td>$224,767</td><td>$206,439</td></tr>
+                <tr><td>Loseta Cer&aacute;mica Patio</td><td>$283,985</td><td>$271,999</td></tr>
+                <tr style="border-top:2px solid var(--navy);">
+                    <td style="font-weight:700;">Total</td>
+                    <td style="font-weight:700;">$2,663,228</td>
+                    <td style="font-weight:700;">$2,428,457</td>
+                </tr>
+                <tr class="grand-total">
+                    <td>Ahorro Total</td>
+                    <td colspan="2" style="text-align:center;font-size:1.5rem;">$234,771 MXN</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ NOTES ═══ -->
+<div class="notes fade-in">
+    <h4>Notas Importantes</h4>
+    <ul>
+        <li>Vigencia de cotizaci&oacute;n: 7 d&iacute;as naturales a partir de la fecha de emisi&oacute;n</li>
+        <li>Cotizaci&oacute;n sujeta a cambios seg&uacute;n variaciones de material o dise&ntilde;o</li>
+        <li>Todos los precios incluyen IVA (16%)</li>
+        <li>Las partidas marcadas como &ldquo;cortes&iacute;a&rdquo; est&aacute;n incluidas sin costo adicional en ambas versiones</li>
+        <li>La propuesta ajustada mantiene la misma calidad de obra con optimizaciones en materiales seleccionados</li>
+    </ul>
+</div>
+
+</div><!-- /container -->
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+    <div class="footer-logos">
+        <svg viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="20" r="14" stroke="white" stroke-width="1.5" fill="none"/>
+            <rect x="13" y="8" width="6" height="24" rx="1" fill="white"/>
+            <text x="38" y="25" font-family="'DM Sans', sans-serif" font-weight="700" font-size="16" fill="white" letter-spacing="1">OLIVEWOOD</text>
+        </svg>
+        <svg viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="16" font-family="'DM Sans', sans-serif" font-weight="400" font-size="8" fill="white" letter-spacing="2" opacity="0.7">GRUPO</text>
+            <text x="0" y="32" font-family="'Archivo Black', sans-serif" font-weight="700" font-size="16" fill="white" letter-spacing="1">ALEFANT</text>
+        </svg>
+    </div>
+    <p>www.<strong>olivewood</strong>.com.mx &middot; <a href="mailto:gustavo@olivewood.com.mx">gustavo@olivewood.com.mx</a> &middot; (442) 722-1396 &middot; @olivewood</p>
+    <p style="margin-top:0.8rem;font-size:0.75rem;opacity:0.5;">Documento confidencial preparado exclusivamente para Sr. Julio &mdash; Casa 2026</p>
+</footer>
+
+<script>
+    function toggleSection(id) {
+        const section = document.getElementById(id);
+        if (section) section.classList.toggle('open');
+    }
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
