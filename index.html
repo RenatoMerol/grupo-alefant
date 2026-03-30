@@ -9,28 +9,28 @@
   <meta property="og:description" content="Construccion, remodelacion y diseno arquitectonico en Mexico. Del diseno a la entrega de llaves.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_MX">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%231B3049'/><text x='50' y='72' font-family='Arial' font-weight='bold' font-size='58' fill='%23C9A96E' text-anchor='middle'>A</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* ========== VARIABLES ========== */
     :root {
       --navy: #1B3049;
       --steel: #3D5A80;
       --gold: #C9A96E;
+      --gold-soft: #d4b97e;
       --pearl: #F0EDEA;
       --graphite: #2C2C2C;
       --white: #FFFFFF;
-      --gold-soft: #d4b97e;
       --navy-light: #253d57;
       --wa-green: #25D366;
       --font-display: 'Archivo Black', sans-serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'DM Sans', sans-serif;
-      --max-w: 1200px;
-      --section-py: clamp(80px, 10vw, 140px);
+      --max-w: 1240px;
+      --section-py: clamp(100px, 12vw, 160px);
     }
 
-    /* ========== RESET ========== */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -40,895 +40,488 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
+    /* Grain texture overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      pointer-events: none;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 128px 128px;
+    }
     img, svg { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     button { font-family: inherit; cursor: pointer; border: none; background: none; }
     ul { list-style: none; }
 
-    /* ========== TYPOGRAPHY ========== */
-    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height: 1.1; }
-    h1 { font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -0.02em; }
-    h2 { font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -0.01em; }
-    h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
-    p { line-height: 1.7; font-size: clamp(1rem, 1.1vw, 1.125rem); }
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height: 1.05; }
+    h1 { font-size: clamp(3rem, 7.5vw, 6rem); letter-spacing: -0.03em; }
+    h2 { font-size: clamp(2.2rem, 4.5vw, 3.6rem); letter-spacing: -0.02em; }
+    h3 { font-size: clamp(1.15rem, 1.8vw, 1.4rem); }
+    p { line-height: 1.75; font-size: clamp(0.95rem, 1.1vw, 1.1rem); }
 
-    /* ========== UTILITIES ========== */
-    .container { width: 90%; max-width: var(--max-w); margin: 0 auto; }
-    .accent-line { display: block; width: 60px; height: 3px; background: var(--gold); border-radius: 2px; }
+    /* ===== UTILITIES ===== */
+    .container { width: 88%; max-width: var(--max-w); margin: 0 auto; }
+    .accent-line { display: block; width: 48px; height: 2px; background: var(--gold); }
     .section-label {
       font-family: var(--font-body);
       font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 1rem;
+      margin-bottom: 16px;
     }
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 16px 36px;
-      border-radius: 4px;
+      padding: 18px 40px;
+      border-radius: 3px;
       font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.02em;
-      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .btn-primary {
-      background: var(--gold);
-      color: var(--navy);
-    }
-    .btn-primary:hover { background: var(--gold-soft); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,169,110,0.3); }
-    .btn-outline {
-      border: 2px solid rgba(255,255,255,0.4);
-      color: var(--white);
-    }
-    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
-    .btn-wa {
-      background: var(--wa-green);
-      color: var(--white);
-    }
-    .btn-wa:hover { background: #1fba59; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,211,102,0.3); }
-    .btn-dark {
-      background: var(--navy);
-      color: var(--white);
-    }
-    .btn-dark:hover { background: var(--navy-light); transform: translateY(-2px); }
+    .btn-primary { background: var(--gold); color: var(--navy); }
+    .btn-primary:hover { background: var(--gold-soft); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(201,169,110,0.35); }
+    .btn-outline { border: 1.5px solid rgba(255,255,255,0.3); color: var(--white); }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
+    .btn-dark { background: var(--navy); color: var(--white); }
+    .btn-dark:hover { background: var(--navy-light); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(27,48,73,0.25); }
 
-    /* ========== SCROLL REVEAL ========== */
+    /* ===== REVEAL ===== */
     .reveal {
       opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(50px);
+      transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .reveal.revealed { opacity: 1; transform: translateY(0); }
-    .stagger:nth-child(2) { transition-delay: 0.12s; }
-    .stagger:nth-child(3) { transition-delay: 0.24s; }
-    .stagger:nth-child(4) { transition-delay: 0.36s; }
-    .stagger:nth-child(5) { transition-delay: 0.48s; }
-    .stagger:nth-child(6) { transition-delay: 0.60s; }
+    .stagger:nth-child(2) { transition-delay: 0.1s; }
+    .stagger:nth-child(3) { transition-delay: 0.2s; }
+    .stagger:nth-child(4) { transition-delay: 0.3s; }
+    .stagger:nth-child(5) { transition-delay: 0.4s; }
+    .stagger:nth-child(6) { transition-delay: 0.5s; }
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
     }
 
-    /* ========== NAVIGATION ========== */
+    /* ===== NAVIGATION ===== */
     .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 20px 0;
-      transition: all 0.4s ease;
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      padding: 24px 0;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .nav.scrolled {
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(12px);
-      padding: 14px 0;
-      box-shadow: 0 2px 40px rgba(27,48,73,0.08);
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(16px);
+      padding: 16px 0;
+      box-shadow: 0 1px 0 rgba(27,48,73,0.06);
     }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .nav-logo svg {
-      width: 36px;
-      height: auto;
-      filter: brightness(0) invert(1);
-      transition: filter 0.4s ease;
-    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 14px; }
+    .nav-logo svg { width: 34px; height: auto; filter: brightness(0) invert(1); transition: filter 0.4s; }
     .nav.scrolled .nav-logo svg { filter: none; }
     .nav-logo-text {
-      font-family: var(--font-display);
-      font-size: 0.95rem;
-      letter-spacing: 0.08em;
-      color: var(--white);
-      transition: color 0.4s ease;
+      font-family: var(--font-display); font-size: 0.85rem;
+      letter-spacing: 0.12em; color: var(--white); transition: color 0.4s;
     }
-    .nav-logo-text span { font-family: var(--font-body); font-weight: 300; opacity: 0.7; }
+    .nav-logo-text span { font-family: var(--font-body); font-weight: 300; opacity: 0.6; }
     .nav.scrolled .nav-logo-text { color: var(--navy); }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-    }
+    .nav-links { display: flex; align-items: center; gap: 40px; }
     .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.8);
-      transition: color 0.3s ease;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gold);
-      transition: width 0.3s ease;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.7); transition: color 0.3s;
     }
     .nav-links a:hover { color: var(--white); }
-    .nav-links a:hover::after { width: 100%; }
     .nav.scrolled .nav-links a { color: var(--steel); }
     .nav.scrolled .nav-links a:hover { color: var(--navy); }
     .nav-cta {
-      padding: 10px 24px;
-      background: rgba(201,169,110,0.15);
-      border: 1px solid var(--gold);
-      border-radius: 4px;
+      padding: 10px 24px !important;
+      border: 1px solid var(--gold) !important;
+      border-radius: 3px;
       color: var(--gold) !important;
       font-weight: 700 !important;
-      opacity: 1 !important;
+      transition: all 0.3s !important;
     }
-    .nav-cta:hover { background: var(--gold); color: var(--navy) !important; }
-    .nav-cta::after { display: none !important; }
-    .nav.scrolled .nav-cta { color: var(--gold) !important; }
-    .nav.scrolled .nav-cta:hover { color: var(--navy) !important; }
-
-    /* Hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      padding: 8px;
-      z-index: 1001;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--white);
-      transition: all 0.3s ease;
-      border-radius: 1px;
-    }
+    .nav-cta:hover { background: var(--gold) !important; color: var(--navy) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; z-index: 1001; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--white); transition: all 0.3s; border-radius: 1px; }
     .nav.scrolled .hamburger span { background: var(--navy); }
     .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .hamburger.active span:nth-child(2) { opacity: 0; }
     .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-    /* ========== HERO ========== */
+    /* ===== HERO ===== */
     .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: var(--navy);
-      overflow: hidden;
+      position: relative; min-height: 100vh; min-height: 100dvh;
+      display: flex; align-items: center; overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+    .hero-bg {
+      position: absolute; inset: -40px;
+      background: url('images/facade.jpg') center/cover no-repeat;
+      will-change: transform;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(27,48,73,0.88) 0%, rgba(27,48,73,0.65) 50%, rgba(27,48,73,0.8) 100%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 50px 50px;
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 30%;
-      background: linear-gradient(to top, rgba(27,48,73,0.6), transparent);
-      pointer-events: none;
-    }
-    .hero-watermark {
-      position: absolute;
-      right: -5%;
-      bottom: -8%;
-      width: 55%;
-      max-width: 700px;
-      opacity: 0.035;
-      filter: brightness(0) invert(1);
-      pointer-events: none;
-      animation: watermarkIn 2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
-    }
-    @keyframes watermarkIn {
-      from { opacity: 0; transform: scale(0.95) translateY(20px); }
-      to { opacity: 0.035; transform: scale(1) translateY(0); }
-    }
-    .hero-diagonal {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 45%;
-      height: 100%;
-      background: linear-gradient(135deg, transparent 0%, rgba(201,169,110,0.04) 100%);
-      clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
       pointer-events: none;
     }
     .hero-content {
-      position: relative;
-      z-index: 2;
-      padding-top: 120px;
-      max-width: 720px;
+      position: relative; z-index: 2;
+      padding: 160px 0 100px;
+      max-width: 700px;
     }
     .hero-label {
-      font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 28px;
-      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+      font-family: var(--font-body); font-weight: 700;
+      font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 32px;
+      animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
     }
     .hero h1 {
-      color: var(--white);
-      margin-bottom: 28px;
-      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+      color: var(--white); margin-bottom: 32px;
+      animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
     }
-    .hero-accent-line {
-      width: 0;
-      height: 3px;
-      background: var(--gold);
-      margin-bottom: 28px;
-      animation: lineExpand 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+    .hero-line {
+      width: 0; height: 2px; background: var(--gold); margin-bottom: 32px;
+      animation: lineExpand 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
     }
-    @keyframes lineExpand { from { width: 0; } to { width: 80px; } }
-    .hero p {
-      color: rgba(255,255,255,0.7);
-      font-size: clamp(1.05rem, 1.3vw, 1.2rem);
-      max-width: 540px;
-      margin-bottom: 40px;
-      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+    @keyframes lineExpand { to { width: 64px; } }
+    .hero-sub {
+      font-family: var(--font-serif); font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+      font-weight: 400; font-style: italic; color: rgba(255,255,255,0.55);
+      max-width: 480px; margin-bottom: 48px; line-height: 1.7;
+      animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
     }
     .hero-ctas {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+      display: flex; gap: 16px; flex-wrap: wrap;
+      animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
     }
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
+      from { opacity: 0; transform: translateY(35px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .hero-scroll {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      color: rgba(255,255,255,0.3);
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
+      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+      z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px;
+      color: rgba(255,255,255,0.25); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
     }
-    .hero-scroll .scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
+    .scroll-line {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent);
+      animation: scrollPulse 2.5s ease-in-out infinite;
     }
     @keyframes scrollPulse {
       0%, 100% { opacity: 1; transform: scaleY(1); }
-      50% { opacity: 0.3; transform: scaleY(0.6); }
+      50% { opacity: 0.2; transform: scaleY(0.5); }
     }
 
-    /* ========== SERVICES ========== */
-    .services {
-      padding: var(--section-py) 0;
-      background: var(--white);
-    }
-    .services-header { margin-bottom: 64px; }
-    .services-header h2 { color: var(--navy); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-    }
+    /* ===== SERVICES ===== */
+    .services { padding: var(--section-py) 0; background: var(--white); }
+    .services-header { margin-bottom: 72px; max-width: 500px; }
+    .services-header h2 { color: var(--navy); margin-bottom: 16px; }
+    .services-header p { color: var(--steel); }
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(27,48,73,0.06); border: 1px solid rgba(27,48,73,0.06); }
     .service-card {
-      padding: 40px 28px;
-      border: 1px solid rgba(27,48,73,0.08);
-      border-radius: 6px;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
+      padding: 48px 32px; background: var(--white); position: relative;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
+    .service-card::after {
+      content: ''; position: absolute; bottom: 0; left: 32px; right: 32px;
+      height: 2px; background: var(--gold); transform: scaleX(0);
+      transform-origin: left; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .service-card:hover::before { transform: scaleX(1); }
-    .service-card:hover {
-      border-color: rgba(27,48,73,0.15);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 60px rgba(27,48,73,0.08);
-    }
+    .service-card:hover { background: var(--pearl); }
+    .service-card:hover::after { transform: scaleX(1); }
     .service-num {
-      font-family: var(--font-display);
-      font-size: 3rem;
-      color: rgba(201,169,110,0.15);
-      line-height: 1;
-      margin-bottom: 20px;
+      font-family: var(--font-serif); font-size: 3.5rem; font-weight: 400;
+      color: rgba(201,169,110,0.18); line-height: 1; margin-bottom: 28px;
     }
-    .service-card h3 {
-      color: var(--navy);
-      margin-bottom: 12px;
-    }
-    .service-card p {
-      font-size: 0.95rem;
-      color: var(--steel);
-      line-height: 1.6;
-    }
+    .service-card h3 { color: var(--navy); margin-bottom: 14px; }
+    .service-card p { font-size: 0.9rem; color: var(--steel); line-height: 1.65; }
 
-    /* ========== WHY ALEFANT ========== */
-    .why {
-      padding: var(--section-py) 0;
-      background: var(--pearl);
+    /* ===== PORTFOLIO ===== */
+    .portfolio { padding: var(--section-py) 0; background: var(--navy); }
+    .portfolio-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 48px;
     }
-    .why-grid {
+    .portfolio-header h2 { color: var(--white); }
+    .portfolio-note { font-size: 0.78rem; color: rgba(255,255,255,0.25); font-style: italic; font-family: var(--font-serif); }
+    .portfolio-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 180px;
+      gap: 12px;
     }
-    .why-text h2 { color: var(--navy); margin-bottom: 20px; }
-    .why-text > p { color: var(--steel); margin-bottom: 48px; }
-    .why-item {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 36px;
+    .portfolio-card {
+      position: relative; border-radius: 4px; overflow: hidden; cursor: pointer;
     }
+    .portfolio-card:nth-child(1) { grid-column: span 5; grid-row: span 2; }
+    .portfolio-card:nth-child(2) { grid-column: span 4; grid-row: span 1; }
+    .portfolio-card:nth-child(3) { grid-column: span 3; grid-row: span 1; }
+    .portfolio-card:nth-child(4) { grid-column: span 3; grid-row: span 2; }
+    .portfolio-card:nth-child(5) { grid-column: span 5; grid-row: span 1; }
+    .portfolio-card:nth-child(6) { grid-column: span 4; grid-row: span 1; }
+    .portfolio-card img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .portfolio-card:hover img { transform: scale(1.06); }
+    .portfolio-card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(27,48,73,0.92) 0%, rgba(27,48,73,0) 55%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 28px; transition: background 0.5s;
+    }
+    .portfolio-card:hover .portfolio-card-overlay {
+      background: linear-gradient(to top, rgba(27,48,73,0.95) 0%, rgba(27,48,73,0.15) 70%);
+    }
+    .portfolio-card-type {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+    }
+    .portfolio-card h3 { color: var(--white); font-size: 1.1rem; margin-bottom: 6px; }
+    .portfolio-card p {
+      font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.5;
+      opacity: 0; transform: translateY(8px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .portfolio-card:hover p { opacity: 1; transform: translateY(0); }
+
+    /* ===== WHY ALEFANT ===== */
+    .why { padding: var(--section-py) 0; background: var(--pearl); }
+    .why-grid {
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 0;
+      align-items: stretch; min-height: 560px;
+    }
+    .why-img {
+      position: relative; overflow: hidden; border-radius: 4px 0 0 4px;
+      margin-left: -6%;
+    }
+    .why-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .why-img:hover img { transform: scale(1.03); }
+    .why-img-accent {
+      position: absolute; top: 24px; left: 24px;
+      width: 48px; height: 48px; border: 2px solid var(--gold);
+      border-radius: 2px; opacity: 0.5;
+    }
+    .why-text {
+      padding: 64px 0 64px 72px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .why-text h2 { color: var(--navy); margin-bottom: 16px; }
+    .why-text > p { color: var(--steel); margin-bottom: 48px; font-family: var(--font-serif); font-size: 1.1rem; font-style: italic; }
+    .why-item { display: flex; gap: 20px; margin-bottom: 36px; }
     .why-item:last-child { margin-bottom: 0; }
     .why-icon {
-      flex-shrink: 0;
-      width: 48px;
-      height: 48px;
-      background: var(--navy);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-shrink: 0; width: 44px; height: 44px; background: var(--navy);
+      border-radius: 3px; display: flex; align-items: center; justify-content: center;
     }
-    .why-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .why-item h3 { color: var(--navy); margin-bottom: 6px; font-size: 1.1rem; }
-    .why-item p { font-size: 0.95rem; color: var(--steel); }
-    .why-visual {
-      position: relative;
-      aspect-ratio: 4/5;
-      background:
-        linear-gradient(135deg, var(--navy) 0%, var(--steel) 50%, var(--navy-light) 100%);
-      border-radius: 6px;
-      overflow: hidden;
-    }
-    .why-visual::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-      background-size: 30px 30px;
-    }
-    .why-visual::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 40%;
-      background: linear-gradient(to top, rgba(27,48,73,0.8), transparent);
-    }
-    .why-visual-label {
-      position: absolute;
-      bottom: 28px;
-      left: 28px;
-      z-index: 1;
-      color: rgba(255,255,255,0.5);
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-    .why-visual-accent {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
-      border: 2px solid var(--gold);
-      border-radius: 2px;
-      opacity: 0.3;
-    }
+    .why-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .why-item h3 { color: var(--navy); margin-bottom: 4px; font-size: 1.05rem; }
+    .why-item p { font-size: 0.9rem; color: var(--steel); line-height: 1.6; }
 
-    /* ========== PROJECTS ========== */
-    .projects {
-      padding: var(--section-py) 0;
-      background: var(--navy);
-    }
-    .projects .section-label { color: var(--gold); }
-    .projects-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 56px;
-    }
-    .projects-header h2 { color: var(--white); }
-    .projects-note {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.35);
-      font-style: italic;
-    }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .project-card {
-      position: relative;
-      aspect-ratio: 4/3;
-      border-radius: 6px;
-      overflow: hidden;
-      cursor: pointer;
-    }
-    .project-card-bg {
-      position: absolute;
-      inset: 0;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .project-card:hover .project-card-bg { transform: scale(1.05); }
-    .project-card:nth-child(1) .project-card-bg {
-      background: linear-gradient(145deg, #2a4a6b, #1a3350, #3d5a80);
-    }
-    .project-card:nth-child(2) .project-card-bg {
-      background: linear-gradient(145deg, #4a3928, #6b5a3c, #3d3020);
-    }
-    .project-card:nth-child(3) .project-card-bg {
-      background: linear-gradient(145deg, #2a5a6b, #1a4050, #3d7080);
-    }
-    .project-card:nth-child(4) .project-card-bg {
-      background: linear-gradient(145deg, #3d3d3d, #5a5a5a, #2c2c2c);
-    }
-    .project-card:nth-child(5) .project-card-bg {
-      background: linear-gradient(145deg, #4a5a3d, #3d4a30, #5a6b4a);
-    }
-    .project-card:nth-child(6) .project-card-bg {
-      background: linear-gradient(145deg, #5a3d4a, #4a2d3d, #6b4a5a);
-    }
-    .project-card-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(27,48,73,0.9) 0%, rgba(27,48,73,0.1) 60%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 28px;
-      transition: background 0.4s ease;
-    }
-    .project-card:hover .project-card-overlay {
-      background: linear-gradient(to top, rgba(27,48,73,0.95) 0%, rgba(27,48,73,0.3) 60%);
-    }
-    .project-card-type {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-    .project-card h3 {
-      color: var(--white);
-      font-size: 1.15rem;
-      margin-bottom: 8px;
-    }
-    .project-card p {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.5);
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.4s ease;
-    }
-    .project-card:hover p { opacity: 1; transform: translateY(0); }
-    /* Grid pattern inside cards */
-    .project-card-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 25px 25px;
-    }
-
-    /* ========== PROCESS ========== */
-    .process {
-      padding: var(--section-py) 0;
-      background: var(--white);
-    }
-    .process-header {
-      text-align: center;
-      margin-bottom: 72px;
-    }
+    /* ===== PROCESS ===== */
+    .process { padding: var(--section-py) 0; background: var(--white); }
+    .process-header { text-align: center; margin-bottom: 80px; }
     .process-header h2 { color: var(--navy); }
     .process-header .accent-line { margin: 20px auto 0; }
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      position: relative;
-    }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
     .process-steps::before {
-      content: '';
-      position: absolute;
-      top: 36px;
-      left: 12.5%;
-      right: 12.5%;
-      height: 2px;
-      background: linear-gradient(to right, var(--gold), rgba(201,169,110,0.2));
+      content: ''; position: absolute; top: 32px; left: 12.5%; right: 12.5%;
+      height: 1px; background: linear-gradient(to right, var(--gold), rgba(201,169,110,0.15));
     }
-    .process-step {
-      text-align: center;
-      position: relative;
-      padding: 0 16px;
-    }
+    .process-step { text-align: center; position: relative; padding: 0 20px; }
     .process-num {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: var(--white);
-      border: 2px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 24px;
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      color: var(--gold);
-      position: relative;
-      z-index: 1;
-      transition: all 0.3s ease;
+      width: 64px; height: 64px; border-radius: 50%; background: var(--white);
+      border: 1.5px solid var(--gold); display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 28px; font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--gold); position: relative; z-index: 1; transition: all 0.4s;
     }
-    .process-step:hover .process-num {
-      background: var(--gold);
-      color: var(--white);
-    }
-    .process-step h3 { color: var(--navy); margin-bottom: 10px; font-size: 1.1rem; }
-    .process-step p { font-size: 0.9rem; color: var(--steel); }
+    .process-step:hover .process-num { background: var(--gold); color: var(--white); }
+    .process-step h3 { color: var(--navy); margin-bottom: 10px; font-size: 1rem; }
+    .process-step p { font-size: 0.88rem; color: var(--steel); line-height: 1.6; }
 
-    /* ========== OLIVEWOOD ALLIANCE ========== */
-    .alliance {
-      padding: var(--section-py) 0;
-      background: var(--pearl);
-      overflow: hidden;
+    /* ===== OLIVEWOOD ALLIANCE ===== */
+    .alliance { padding: var(--section-py) 0; background: var(--white); overflow: hidden; }
+    .alliance-intro { text-align: center; margin-bottom: 56px; }
+    .alliance-intro h2 { color: var(--navy); margin-bottom: 12px; }
+    .alliance-intro p {
+      font-family: var(--font-serif); font-style: italic;
+      font-size: 1.15rem; color: var(--steel);
     }
     .alliance-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border-radius: 6px;
-      overflow: hidden;
-      min-height: 480px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 0; border-radius: 4px; overflow: hidden; min-height: 420px;
     }
     .alliance-col {
-      padding: 60px 48px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 56px 44px; display: flex; flex-direction: column; justify-content: center;
     }
-    .alliance-alefant {
-      background: var(--navy);
-      color: var(--white);
+    .alliance-alefant { background: var(--navy); color: var(--white); }
+    .alliance-img {
+      position: relative; overflow: hidden;
     }
-    .alliance-olivewood {
-      background: var(--white);
-      border: 1px solid rgba(27,48,73,0.08);
-    }
+    .alliance-img img { width: 100%; height: 100%; object-fit: cover; }
+    .alliance-olivewood { background: var(--pearl); }
     .alliance-tag {
-      font-weight: 700;
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
+      font-weight: 700; font-size: 0.68rem; letter-spacing: 0.22em;
+      text-transform: uppercase; margin-bottom: 20px;
     }
     .alliance-alefant .alliance-tag { color: var(--gold); }
     .alliance-olivewood .alliance-tag { color: var(--steel); }
-    .alliance-col h3 {
-      font-size: clamp(1.4rem, 2.2vw, 1.8rem);
-      margin-bottom: 20px;
-    }
+    .alliance-col h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); margin-bottom: 16px; }
     .alliance-olivewood h3 { color: var(--navy); }
-    .alliance-col p { font-size: 0.95rem; line-height: 1.7; }
-    .alliance-alefant p { color: rgba(255,255,255,0.7); }
+    .alliance-col p { font-size: 0.9rem; line-height: 1.7; }
+    .alliance-alefant p { color: rgba(255,255,255,0.6); }
     .alliance-olivewood p { color: var(--steel); }
-    .alliance-list {
-      margin-top: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .alliance-list li {
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .alliance-list li::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .alliance-alefant .alliance-list li { color: rgba(255,255,255,0.8); }
+    .alliance-list { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .alliance-list li { font-size: 0.88rem; display: flex; align-items: center; gap: 10px; }
+    .alliance-list li::before { content: ''; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+    .alliance-alefant .alliance-list li { color: rgba(255,255,255,0.75); }
     .alliance-olivewood .alliance-list li { color: var(--steel); }
-    .alliance-bottom {
-      text-align: center;
-      margin-top: 48px;
-    }
-    .alliance-bottom p {
-      font-size: 1.1rem;
-      color: var(--steel);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .alliance-bottom strong { color: var(--navy); }
+    .alliance-bottom { text-align: center; margin-top: 56px; }
+    .alliance-bottom p { font-family: var(--font-serif); font-size: 1.15rem; color: var(--steel); font-style: italic; }
+    .alliance-bottom strong { color: var(--navy); font-style: normal; }
 
-    /* ========== CTA ========== */
+    /* ===== CTA ===== */
     .cta-section {
       padding: var(--section-py) 0;
       background: var(--gold);
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
     .cta-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(27,48,73,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(27,48,73,0.04) 1px, transparent 1px);
-      background-size: 50px 50px;
-      pointer-events: none;
+        linear-gradient(rgba(27,48,73,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(27,48,73,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
     }
-    .cta-content {
-      text-align: center;
-      position: relative;
-      z-index: 1;
+    .cta-content { text-align: center; position: relative; z-index: 1; }
+    .cta-content .section-label { color: var(--navy); opacity: 0.35; }
+    .cta-content h2 { color: var(--navy); margin-bottom: 20px; }
+    .cta-content > p {
+      font-family: var(--font-serif); font-style: italic;
+      color: rgba(27,48,73,0.6); font-size: 1.15rem; max-width: 460px; margin: 0 auto 44px;
     }
-    .cta-content h2 {
-      color: var(--navy);
-      margin-bottom: 20px;
-    }
-    .cta-content p {
-      color: rgba(27,48,73,0.7);
-      font-size: 1.1rem;
-      max-width: 500px;
-      margin: 0 auto 40px;
-    }
-    .cta-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .cta-phone {
-      margin-top: 24px;
-      font-size: 0.9rem;
-      color: rgba(27,48,73,0.5);
-    }
-    .cta-phone a {
-      color: var(--navy);
-      font-weight: 700;
-    }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .cta-phone { margin-top: 20px; font-size: 0.85rem; color: rgba(27,48,73,0.4); }
+    .cta-phone a { color: var(--navy); font-weight: 700; }
 
-    /* ========== FOOTER ========== */
-    .footer {
-      background: var(--navy);
-      padding: 60px 0 30px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
-    .footer-logo svg {
-      width: 42px;
-      height: auto;
-      filter: brightness(0) invert(1);
-      margin-bottom: 16px;
-    }
-    .footer-brand-name {
-      font-family: var(--font-display);
-      color: var(--white);
-      font-size: 1.1rem;
-      letter-spacing: 0.05em;
-      margin-bottom: 12px;
-    }
-    .footer-desc {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.4);
-      max-width: 320px;
-      line-height: 1.6;
-    }
+    /* ===== FOOTER ===== */
+    .footer { background: var(--navy); padding: 72px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 56px; margin-bottom: 56px; }
+    .footer-logo svg { width: 38px; height: auto; filter: brightness(0) invert(1); margin-bottom: 16px; }
+    .footer-brand { font-family: var(--font-display); color: var(--white); font-size: 1rem; letter-spacing: 0.06em; margin-bottom: 12px; }
+    .footer-desc { font-size: 0.85rem; color: rgba(255,255,255,0.35); max-width: 300px; line-height: 1.65; }
     .footer h4 {
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
+      font-family: var(--font-body); font-weight: 700; font-size: 0.7rem;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
     }
-    .footer-links a {
-      display: block;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.5);
-      padding: 6px 0;
-      transition: color 0.3s;
-    }
+    .footer-links a { display: block; font-size: 0.85rem; color: rgba(255,255,255,0.4); padding: 5px 0; transition: color 0.3s; }
     .footer-links a:hover { color: var(--white); }
-    .footer-contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 14px;
-    }
-    .footer-contact-item svg {
-      width: 16px;
-      height: 16px;
-      stroke: var(--gold);
-      fill: none;
-      stroke-width: 2;
-      flex-shrink: 0;
-      margin-top: 3px;
-    }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
+    .footer-contact-item svg { width: 15px; height: 15px; stroke: var(--gold); fill: none; stroke-width: 1.5; flex-shrink: 0; margin-top: 2px; }
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.25);
+      border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.75rem; color: rgba(255,255,255,0.2);
     }
 
-    /* ========== WHATSAPP FLOAT ========== */
+    /* ===== WHATSAPP FLOAT ===== */
     .wa-float {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      z-index: 999;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: var(--wa-green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-      transition: all 0.3s ease;
-      animation: waFloat 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.5s both;
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: var(--wa-green); display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 24px rgba(37,211,102,0.4);
+      transition: all 0.3s; animation: waIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.5s both;
     }
-    .wa-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 30px rgba(37,211,102,0.5);
-    }
-    .wa-float svg {
-      width: 28px;
-      height: 28px;
-      fill: var(--white);
-    }
+    .wa-float:hover { transform: scale(1.08); box-shadow: 0 6px 32px rgba(37,211,102,0.5); }
+    .wa-float svg { width: 26px; height: 26px; fill: var(--white); }
     .wa-float::after {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      border: 2px solid var(--wa-green);
-      opacity: 0;
+      content: ''; position: absolute; inset: -4px; border-radius: 50%;
+      border: 2px solid var(--wa-green); opacity: 0;
       animation: waPulse 2.5s ease-in-out infinite 2.5s;
     }
-    @keyframes waPulse {
-      0% { opacity: 0.6; transform: scale(1); }
-      100% { opacity: 0; transform: scale(1.4); }
-    }
-    @keyframes waFloat {
-      from { opacity: 0; transform: scale(0.5) translateY(20px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
+    @keyframes waPulse { 0% { opacity: 0.5; transform: scale(1); } 100% { opacity: 0; transform: scale(1.35); } }
+    @keyframes waIn { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: scale(1); } }
 
-    /* ========== RESPONSIVE ========== */
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 220px;
+      }
+      .portfolio-card:nth-child(1),
+      .portfolio-card:nth-child(2),
+      .portfolio-card:nth-child(3),
+      .portfolio-card:nth-child(4),
+      .portfolio-card:nth-child(5),
+      .portfolio-card:nth-child(6) { grid-column: span 1; grid-row: span 1; }
+      .portfolio-card:nth-child(1) { grid-column: span 1; grid-row: span 2; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .why-img { margin-left: 0; }
+      .why-text { padding-left: 48px; }
+      .alliance-grid { grid-template-columns: 1fr 1fr; }
+      .alliance-img { display: none; }
       .process-steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
       .process-steps::before { display: none; }
-      .why-grid { gap: 48px; }
-      .alliance-col { padding: 40px 32px; }
     }
     @media (max-width: 768px) {
       .hamburger { display: flex; }
       .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        max-width: 320px;
-        height: 100vh;
-        background: var(--navy);
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 0 40px;
-        gap: 24px;
+        position: fixed; top: 0; right: -100%; width: 80%; max-width: 300px;
+        height: 100vh; height: 100dvh; background: var(--navy);
+        flex-direction: column; justify-content: center; align-items: flex-start;
+        padding: 0 40px; gap: 20px;
         transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         box-shadow: -10px 0 40px rgba(0,0,0,0.3);
       }
       .nav-links.open { right: 0; }
-      .nav-links a { color: rgba(255,255,255,0.7) !important; font-size: 1.1rem; }
+      .nav-links a { color: rgba(255,255,255,0.7) !important; font-size: 1rem; }
       .nav-links a:hover { color: var(--white) !important; }
-      .nav-cta { margin-top: 16px; }
-      .hero-content { padding-top: 100px; }
-      .hero h1 { font-size: clamp(2.2rem, 8vw, 3.5rem); }
-      .hero-watermark { width: 80%; right: -15%; bottom: -5%; opacity: 0.025; }
+      .hero-content { padding: 120px 0 80px; }
       .services-grid { grid-template-columns: 1fr; }
+      .service-card { padding: 36px 28px; }
+      .portfolio-grid { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+      .portfolio-card:nth-child(1) { grid-row: span 1; }
+      .portfolio-header { flex-direction: column; align-items: flex-start; gap: 10px; }
       .why-grid { grid-template-columns: 1fr; }
-      .why-visual { max-height: 300px; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .projects-header { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .process-steps { grid-template-columns: 1fr; gap: 32px; }
+      .why-img { margin-left: 0; aspect-ratio: 16/9; border-radius: 4px; }
+      .why-text { padding: 48px 0 0; }
+      .process-steps { grid-template-columns: 1fr; gap: 28px; }
       .alliance-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .alliance-img { aspect-ratio: 16/9; }
+      .alliance-img { display: block; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
       .cta-buttons { flex-direction: column; align-items: center; }
-      .wa-float { bottom: 20px; right: 20px; width: 54px; height: 54px; }
+      .wa-float { bottom: 20px; right: 20px; width: 52px; height: 52px; }
     }
   </style>
 </head>
 <body>
 
-<!-- ========== NAVIGATION ========== -->
+<!-- NAV -->
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="#inicio" class="nav-logo">
-      <svg viewBox="0 0 2022 1881" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="translate(-263.287,-710.727)"><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(331.312,309.504)"><path d="M0,-21.321C1.908,-18.204 5.698,-12.508 8.078,-10.096C11.383,-6.748 14.26,-10.137 17.766,-12.107C19.397,-13.024 19.868,-13.467 21.091,-14.249C25.828,-17.279 24.141,-15.637 26.147,-13.255C26.747,-12.542 28.216,-12.35 28.744,-11.721C31.987,-7.861 35.591,-2.086 38.938,2.278C32.832,1.58 22.829,2.673 17.271,0.641C15.621,0.037 9.022,-5.609 7.359,-7.146C3.392,-10.811 -2.505,-16.883 -5.923,-21.004C-6.648,-21.879 -7.3,-22.343 -7.08,-23.681C-4.032,-23.381 -2.439,-23.994 0,-21.321" fill="#8FA4B3"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(63.189,170.575)"><path d="M0,87.141C39.25,58.501 81.053,28.557 120.702,0.219L121.009,0L121.383,0.071C196.57,14.412 273.353,29.231 348.285,44.513C273.039,30.972 196.188,16.322 121.049,1.811L121.729,1.663C111.699,8.762 85.895,27.006 76.174,33.849C51.047,51.544 25.229,69.656 0,87.141" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(341.981,581.985)"><path d="M0,-405.057C22.568,-372.865 43.551,-339.522 62.303,-304.955C71.338,-288.128 79.828,-270.946 86.868,-253.174C89.866,-245.5 92.675,-237.585 94.834,-229.621C96.505,-223.493 97.847,-217.263 98.531,-210.929C88.516,-157.348 76.291,-90.931 66.104,-38.59L77.702,-0.598L77.263,-0.921L102.02,-0.769L101.741,-0.589C105.764,-9.364 113.939,-26.713 117.989,-35.452C114.076,-26.773 106.232,-9.022 102.3,-0.334L102.22,-0.155L102.02,-0.154L77.263,-0.002L76.927,0L76.824,-0.325L64.868,-38.206L64.82,-38.357L64.849,-38.517C74.701,-92.632 86.615,-157.066 96.715,-211.13C95.823,-218.707 93.434,-229.111 90.706,-237.31C88.298,-244.836 85.441,-252.359 82.407,-259.664C74.961,-277.513 66.242,-294.817 57.028,-311.817C39.564,-343.796 20.374,-374.847 0,-405.057" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(457.575,565.703)"><path d="M0,-13.832L30.949,0L-0.707,-12.127L0,-13.832Z" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(479.313,621.13)"><path d="M0,-59.215L-27.983,0.757L-1.683,-59.972L0,-59.215Z" fill="#121618"/></g></g><g transform="matrix(-4.167,0,0,4.167,3577.3,0)"><rect x="398.589" y="186.85" width="61.374" height="0.923" fill="#121618"/></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(399.797,423.027)"><path d="M0,182.176C-5.991,168.662 -11.982,154.696 -17.786,141.074L-23.606,127.328L-23.663,127.193C-24.668,90.122 -25.382,52.975 -25.545,15.885C-25.564,11.941 -25.567,7.919 -25.561,3.972L-25.548,0L-25.366,3.968C-25.192,7.92 -25.027,11.927 -24.878,15.871C-23.471,52.883 -22.612,89.972 -22.046,127L-22.107,126.707C-20.307,131.123 -15.447,143.145 -13.712,147.464C-9.111,158.93 -4.447,170.665 0,182.176" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(335.491,370.989)"><path d="M0,20.059C-23.526,16.388 -47.113,11.659 -69.795,4.335C-72.214,3.488 -74.637,2.604 -76.93,1.444C-77.678,1.036 -78.463,0.634 -79.047,0C-78.396,0.551 -77.593,0.868 -76.813,1.19C-74.443,2.119 -71.981,2.789 -69.528,3.467C-46.462,9.451 -23.073,14.074 0,20.059" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(282.394,470.441)"><path d="M0,-171.428C-8.496,-160.474 -14.257,-146.516 -14.99,-132.619C-15.187,-128.964 -15.494,-123.981 -15.738,-120.288C-18.229,-83.81 -21.262,-47.306 -24.831,-10.92C-25.128,-7.953 -25.625,-2.99 -25.95,-0.001C-25.95,0 -25.64,-5.48 -25.64,-5.48C-25.448,-8.688 -25.175,-13.293 -24.972,-16.435C-23.053,-47.068 -20.642,-78.796 -18.286,-109.47C-17.747,-116.449 -17.029,-125.812 -16.556,-132.714C-16.461,-134.1 -16.308,-135.483 -16.116,-136.859C-14.287,-149.464 -8.421,-161.897 0,-171.428" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(89.821,348.566)"><path d="M0,-109.268L14.41,0L-1.828,-109.011L0,-109.268Z" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(76.76,432.878)"><path d="M0,-152.861C8.181,-140.827 24.468,-116.728 32.612,-104.69C48.191,-91.63 64.334,-77.749 79.966,-64.256C95.254,-51.028 111.831,-36.577 126.933,-23.249C138.753,-19.585 157.92,-13.102 170.78,-8.879C178.621,-6.28 189.377,-2.66 197.202,0C192.73,-1.352 183.871,-4.019 179.417,-5.388C162.581,-10.53 142.903,-16.668 126.031,-21.959C110.711,-35.093 94.044,-49.582 78.799,-62.915C63.154,-76.621 47.566,-90.391 32.101,-104.302C24.122,-116.371 7.964,-140.769 0,-152.861" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(324.282,399.495)"><path d="M0,-42.539C6.638,-29.071 12.923,-15.411 19.103,-1.73L17.764,-2.088L21.145,-4.575C36.942,-16.137 52.879,-27.567 69.081,-38.557C70.241,-39.341 71.403,-40.121 72.57,-40.895C71.475,-40.023 70.376,-39.156 69.273,-38.293C53.841,-26.246 38.071,-14.587 22.218,-3.102C21.647,-2.708 18.446,-0.37 17.915,0C16.262,-3.772 14.616,-7.554 12.988,-11.337C8.543,-21.674 4.148,-32.077 0,-42.539" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(368.572,467.707)"><path d="M0,-88.514C41.232,-41.869 149.34,-6.651 149.34,-6.651C149.34,-6.651 46.227,0 -26.001,-69.58" fill="#FFF"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(368.572,462.401)"><path d="M0,-83.208C7.242,-75.282 15.574,-68.426 24.277,-62.172C35.173,-54.379 46.733,-47.501 58.527,-41.166C68.757,-35.673 79.223,-30.591 89.802,-25.806C109.355,-17.015 129.308,-9.067 149.625,-2.218L154.199,-0.713C144.632,0 134.959,-0.188 125.408,-0.849C84.681,-3.769 44.08,-15.11 9.202,-36.649C4.157,-39.798 -0.862,-43.196 -5.624,-46.753C-12.795,-52.12 -19.628,-57.996 -26.001,-64.274L-23.799,-62.257C-22.599,-61.135 -20.599,-59.4 -19.336,-58.293C-19.036,-58.028 -18.511,-57.593 -18.196,-57.33C-14.794,-54.45 -11.266,-51.641 -7.68,-48.992C12.264,-34.191 34.857,-23.103 58.451,-15.476C85.817,-6.715 114.624,-2.093 143.365,-2.1C145.336,-2.116 147.317,-2.153 149.281,-2.261L149.056,-0.472C103.157,-16.148 31.769,-46.665 0,-83.208" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(433.551,444.642)"><path d="M0,-41.205C3.78,-38.166 7.864,-35.412 12.059,-32.977C24.696,-25.648 38.471,-20.511 52.417,-16.286C71.062,-10.77 90.189,-6.801 109.478,-4.362L114.821,-3.749L109.594,-2.548L109.469,-2.519C108.298,-2.269 107.111,-2.08 105.928,-1.923C90.211,0 74.262,-1.75 58.807,-4.815C49.995,-6.626 41.031,-9.044 32.488,-11.862C20.438,-15.834 8.612,-20.646 -2.801,-26.161C7.72,-21.599 18.454,-17.481 29.367,-13.99C41.381,-10.165 53.761,-7.035 66.222,-5.098C78.078,-3.262 90.15,-2.344 102.121,-3.349C104.199,-3.539 106.269,-3.783 108.316,-4.167L108.747,-4.252L108.959,-4.297L109.063,-4.32L109.159,-4.342L109.275,-2.528C108.045,-2.67 106.838,-2.829 105.624,-2.995C89.89,-5.194 74.296,-8.439 59.014,-12.788C38.717,-18.69 16.106,-27.233 0,-41.205" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(329.477,336.042)"><path d="M0,-45.75C3.297,-45.891 4.658,-43.895 4.658,-43.895L12.45,-32.783C15.171,-29.369 18.271,-31.588 18.271,-31.588L27.244,-37.268C29.723,-38.868 29.748,-37.613 29.748,-37.613C30.65,-35.143 31.927,-34.82 31.927,-34.82C33.102,-34.64 33.578,-33.919 33.578,-33.919L66.19,13.118C52.486,-35.928 21.632,-58.868 21.632,-58.868L-15.23,-48.562C-15.23,-48.562 -18.146,-47.845 -15.486,-46.918C-15.486,-46.918 -13.016,-46.157 -11.682,-46.359C-10.348,-46.562 0,-45.75 0,-45.75" fill="#2B4F6C"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(350.838,261.279)"><path d="M0,16.798L-47.061,0L0.302,15.926L0,16.798Z" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(323.419,290.358)"><path d="M0,-6.909L-29.647,0.889L-0.248,-7.798L0,-6.909Z" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(258.048,190.685)"><path d="M0,41.509L-82.949,-0.513L0.818,39.854C1.901,40.428 1.139,42.022 0,41.509" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(258.199,204.514)"><path d="M0,27.738L-92.958,-0.305L0.516,25.966C1.682,26.342 1.211,28.043 0,27.738" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(259.274,304.075)"><path d="M0,-73.139L13.111,-47.54L13.216,-47.335C13.193,-47.063 0.516,0.82 0.48,1.088L12.026,-47.409L12.076,-46.994L-1.633,-72.278C-2.176,-73.376 -0.624,-74.227 0,-73.139" fill="#121618"/></g></g></g></svg>
+      <svg viewBox="0 0 2022 1881" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="translate(-263.287,-710.727)"><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(331.312,309.504)"><path d="M0,-21.321C1.908,-18.204 5.698,-12.508 8.078,-10.096C11.383,-6.748 14.26,-10.137 17.766,-12.107C19.397,-13.024 19.868,-13.467 21.091,-14.249C25.828,-17.279 24.141,-15.637 26.147,-13.255C26.747,-12.542 28.216,-12.35 28.744,-11.721C31.987,-7.861 35.591,-2.086 38.938,2.278C32.832,1.58 22.829,2.673 17.271,0.641C15.621,0.037 9.022,-5.609 7.359,-7.146C3.392,-10.811 -2.505,-16.883 -5.923,-21.004C-6.648,-21.879 -7.3,-22.343 -7.08,-23.681C-4.032,-23.381 -2.439,-23.994 0,-21.321" fill="#8FA4B3"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(63.189,170.575)"><path d="M0,87.141C39.25,58.501 81.053,28.557 120.702,0.219L121.383,0.071C196.57,14.412 273.353,29.231 348.285,44.513C273.039,30.972 196.188,16.322 121.049,1.811L121.729,1.663C111.699,8.762 85.895,27.006 76.174,33.849C51.047,51.544 25.229,69.656 0,87.141" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(341.981,581.985)"><path d="M0,-405.057C22.568,-372.865 43.551,-339.522 62.303,-304.955C71.338,-288.128 79.828,-270.946 86.868,-253.174C89.866,-245.5 92.675,-237.585 94.834,-229.621C96.505,-223.493 97.847,-217.263 98.531,-210.929C88.516,-157.348 76.291,-90.931 66.104,-38.59L77.702,-0.598L77.263,-0.921L102.02,-0.769L101.741,-0.589C105.764,-9.364 113.939,-26.713 117.989,-35.452C114.076,-26.773 106.232,-9.022 102.3,-0.334L102.22,-0.155L102.02,-0.154L77.263,-0.002L76.927,0L76.824,-0.325L64.868,-38.206L64.82,-38.357L64.849,-38.517C74.701,-92.632 86.615,-157.066 96.715,-211.13C95.823,-218.707 93.434,-229.111 90.706,-237.31C88.298,-244.836 85.441,-252.359 82.407,-259.664C74.961,-277.513 66.242,-294.817 57.028,-311.817C39.564,-343.796 20.374,-374.847 0,-405.057" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(368.572,467.707)"><path d="M0,-88.514C41.232,-41.869 149.34,-6.651 149.34,-6.651C149.34,-6.651 46.227,0 -26.001,-69.58" fill="#FFF"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(368.572,462.401)"><path d="M0,-83.208C7.242,-75.282 15.574,-68.426 24.277,-62.172C35.173,-54.379 46.733,-47.501 58.527,-41.166C68.757,-35.673 79.223,-30.591 89.802,-25.806C109.355,-17.015 129.308,-9.067 149.625,-2.218L154.199,-0.713C144.632,0 134.959,-0.188 125.408,-0.849C84.681,-3.769 44.08,-15.11 9.202,-36.649C4.157,-39.798 -0.862,-43.196 -5.624,-46.753C-12.795,-52.12 -19.628,-57.996 -26.001,-64.274" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(329.477,336.042)"><path d="M0,-45.75C3.297,-45.891 4.658,-43.895 4.658,-43.895L12.45,-32.783C15.171,-29.369 18.271,-31.588 18.271,-31.588L27.244,-37.268C29.723,-38.868 29.748,-37.613 29.748,-37.613C30.65,-35.143 31.927,-34.82 31.927,-34.82C33.102,-34.64 33.578,-33.919 33.578,-33.919L66.19,13.118C52.486,-35.928 21.632,-58.868 21.632,-58.868L-15.23,-48.562C-15.23,-48.562 -18.146,-47.845 -15.486,-46.918C-15.486,-46.918 -13.016,-46.157 -11.682,-46.359C-10.348,-46.562 0,-45.75 0,-45.75" fill="#2B4F6C"/></g></g></g></svg>
       <span class="nav-logo-text"><span>GRUPO </span>ALEFANT</span>
     </a>
     <nav class="nav-links" id="navLinks">
@@ -937,42 +530,37 @@
       <a href="#proceso">Proceso</a>
       <a href="#contacto" class="nav-cta">Contacto</a>
     </nav>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<!-- ========== HERO ========== -->
+<!-- HERO -->
 <section class="hero" id="inicio">
-  <div class="hero-diagonal"></div>
-  <svg class="hero-watermark" viewBox="0 0 2022 1881" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="translate(-263.287,-710.727)"><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(331.312,309.504)"><path d="M0,-21.321C1.908,-18.204 5.698,-12.508 8.078,-10.096C11.383,-6.748 14.26,-10.137 17.766,-12.107C19.397,-13.024 19.868,-13.467 21.091,-14.249C25.828,-17.279 24.141,-15.637 26.147,-13.255C26.747,-12.542 28.216,-12.35 28.744,-11.721C31.987,-7.861 35.591,-2.086 38.938,2.278C32.832,1.58 22.829,2.673 17.271,0.641C15.621,0.037 9.022,-5.609 7.359,-7.146C3.392,-10.811 -2.505,-16.883 -5.923,-21.004C-6.648,-21.879 -7.3,-22.343 -7.08,-23.681C-4.032,-23.381 -2.439,-23.994 0,-21.321" fill="currentColor"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(63.189,170.575)"><path d="M0,87.141C39.25,58.501 81.053,28.557 120.702,0.219L121.009,0L121.383,0.071C196.57,14.412 273.353,29.231 348.285,44.513C273.039,30.972 196.188,16.322 121.049,1.811L121.729,1.663C111.699,8.762 85.895,27.006 76.174,33.849C51.047,51.544 25.229,69.656 0,87.141" fill="currentColor"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(341.981,581.985)"><path d="M0,-405.057C22.568,-372.865 43.551,-339.522 62.303,-304.955C71.338,-288.128 79.828,-270.946 86.868,-253.174C89.866,-245.5 92.675,-237.585 94.834,-229.621C96.505,-223.493 97.847,-217.263 98.531,-210.929C88.516,-157.348 76.291,-90.931 66.104,-38.59L77.702,-0.598L77.263,-0.921L102.02,-0.769L101.741,-0.589C105.764,-9.364 113.939,-26.713 117.989,-35.452C114.076,-26.773 106.232,-9.022 102.3,-0.334L102.22,-0.155L102.02,-0.154L77.263,-0.002L76.927,0L76.824,-0.325L64.868,-38.206L64.82,-38.357L64.849,-38.517C74.701,-92.632 86.615,-157.066 96.715,-211.13C95.823,-218.707 93.434,-229.111 90.706,-237.31C88.298,-244.836 85.441,-252.359 82.407,-259.664C74.961,-277.513 66.242,-294.817 57.028,-311.817C39.564,-343.796 20.374,-374.847 0,-405.057" fill="currentColor"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(368.572,467.707)"><path d="M0,-88.514C41.232,-41.869 149.34,-6.651 149.34,-6.651C149.34,-6.651 46.227,0 -26.001,-69.58" fill="currentColor" opacity="0.3"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(368.572,462.401)"><path d="M0,-83.208C7.242,-75.282 15.574,-68.426 24.277,-62.172C35.173,-54.379 46.733,-47.501 58.527,-41.166C68.757,-35.673 79.223,-30.591 89.802,-25.806C109.355,-17.015 129.308,-9.067 149.625,-2.218L154.199,-0.713C144.632,0 134.959,-0.188 125.408,-0.849C84.681,-3.769 44.08,-15.11 9.202,-36.649C4.157,-39.798 -0.862,-43.196 -5.624,-46.753C-12.795,-52.12 -19.628,-57.996 -26.001,-64.274L-23.799,-62.257C-22.599,-61.135 -20.599,-59.4 -19.336,-58.293C-19.036,-58.028 -18.511,-57.593 -18.196,-57.33C-14.794,-54.45 -11.266,-51.641 -7.68,-48.992C12.264,-34.191 34.857,-23.103 58.451,-15.476C85.817,-6.715 114.624,-2.093 143.365,-2.1C145.336,-2.116 147.317,-2.153 149.281,-2.261L149.056,-0.472C103.157,-16.148 31.769,-46.665 0,-83.208" fill="currentColor"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(329.477,336.042)"><path d="M0,-45.75C3.297,-45.891 4.658,-43.895 4.658,-43.895L12.45,-32.783C15.171,-29.369 18.271,-31.588 18.271,-31.588L27.244,-37.268C29.723,-38.868 29.748,-37.613 29.748,-37.613C30.65,-35.143 31.927,-34.82 31.927,-34.82C33.102,-34.64 33.578,-33.919 33.578,-33.919L66.19,13.118C52.486,-35.928 21.632,-58.868 21.632,-58.868L-15.23,-48.562C-15.23,-48.562 -18.146,-47.845 -15.486,-46.918C-15.486,-46.918 -13.016,-46.157 -11.682,-46.359C-10.348,-46.562 0,-45.75 0,-45.75" fill="currentColor" opacity="0.5"/></g></g></g></svg>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid"></div>
   <div class="container hero-content">
-    <p class="hero-label">Construccion &middot; Remodelacion &middot; Diseno</p>
+    <p class="hero-label">Grupo Alefant</p>
     <h1>Construimos<br>lo que imaginas</h1>
-    <div class="hero-accent-line"></div>
-    <p>Empresa de construccion, remodelacion y diseno arquitectonico en Ciudad de Mexico con proyectos en toda la republica mexicana.</p>
+    <div class="hero-line"></div>
+    <p class="hero-sub">Construccion, remodelacion y diseno arquitectonico en Ciudad de Mexico y toda la republica mexicana.</p>
     <div class="hero-ctas">
       <a href="https://wa.me/525573893756?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20construcci%C3%B3n" target="_blank" rel="noopener" class="btn btn-primary">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Cotiza tu proyecto
       </a>
       <a href="#servicios" class="btn btn-outline">Nuestros servicios</a>
     </div>
   </div>
-  <div class="hero-scroll">
-    <span>Explora</span>
-    <div class="scroll-line"></div>
-  </div>
+  <div class="hero-scroll"><span>Explora</span><div class="scroll-line"></div></div>
 </section>
 
-<!-- ========== SERVICES ========== -->
+<!-- SERVICES -->
 <section class="services" id="servicios">
   <div class="container">
     <div class="services-header reveal">
       <p class="section-label">Servicios</p>
       <h2>Lo que hacemos</h2>
-      <span class="accent-line" style="margin-top:16px;"></span>
     </div>
     <div class="services-grid">
       <div class="service-card reveal stagger">
@@ -999,116 +587,110 @@
   </div>
 </section>
 
-<!-- ========== WHY ALEFANT ========== -->
+<!-- PORTFOLIO -->
+<section class="portfolio" id="proyectos">
+  <div class="container">
+    <div class="portfolio-header reveal">
+      <div>
+        <p class="section-label">Portafolio</p>
+        <h2>Proyectos</h2>
+      </div>
+      <p class="portfolio-note">Imagenes de referencia — portafolio fotografico en desarrollo</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal stagger">
+        <img src="images/hero.jpg" alt="Casa residencial moderna" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-type">Construccion nueva</span>
+          <h3>Residencia completa</h3>
+          <p>Proyecto de casa habitacion desde cero — estructura, acabados y exteriores.</p>
+        </div>
+      </div>
+      <div class="portfolio-card reveal stagger">
+        <img src="images/kitchen.jpg" alt="Cocina remodelada de lujo" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-type">Remodelacion</span>
+          <h3>Renovacion de cocina</h3>
+          <p>Transformacion completa en alianza con Olivewood.</p>
+        </div>
+      </div>
+      <div class="portfolio-card reveal stagger">
+        <img src="images/pool.jpg" alt="Alberca residencial" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-type">Mejoras del hogar</span>
+          <h3>Alberca residencial</h3>
+          <p>Diseno, excavacion y construccion con area de descanso.</p>
+        </div>
+      </div>
+      <div class="portfolio-card reveal stagger">
+        <img src="images/remodel.jpg" alt="Espacio remodelado moderno" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-type">Remodelacion</span>
+          <h3>Espacios interiores</h3>
+          <p>Acabados contemporaneos con diseno funcional.</p>
+        </div>
+      </div>
+      <div class="portfolio-card reveal stagger">
+        <img src="images/architecture.jpg" alt="Diseno arquitectonico" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-type">Diseno</span>
+          <h3>Proyecto arquitectonico</h3>
+          <p>Planos ejecutivos y direccion de obra profesional.</p>
+        </div>
+      </div>
+      <div class="portfolio-card reveal stagger">
+        <img src="images/construction.jpg" alt="Proceso de construccion" loading="lazy">
+        <div class="portfolio-card-overlay">
+          <span class="portfolio-card-type">Obra</span>
+          <h3>En proceso</h3>
+          <p>Supervision profesional y calidad en cada etapa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ALEFANT -->
 <section class="why" id="nosotros">
   <div class="container">
     <div class="why-grid">
+      <div class="why-img reveal">
+        <img src="images/why-alefant.jpg" alt="Detalle de construccion profesional" loading="lazy">
+        <div class="why-img-accent"></div>
+      </div>
       <div class="why-text reveal">
         <p class="section-label">Por que Alefant</p>
         <h2>Solidez en cada proyecto</h2>
-        <p>No solo construimos estructuras — construimos confianza. Cada proyecto tiene un responsable, un plan claro y un compromiso con la calidad.</p>
+        <p>No solo construimos estructuras — construimos confianza.</p>
         <div class="why-items">
           <div class="why-item">
-            <div class="why-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </div>
+            <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
             <div>
               <h3>Ejecucion integral</h3>
               <p>Del diseno a la entrega de llaves. Un solo equipo, un solo responsable.</p>
             </div>
           </div>
           <div class="why-item">
-            <div class="why-icon">
-              <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            </div>
+            <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
             <div>
               <h3>Transparencia total</h3>
-              <p>Cotizacion detallada, plazos claros y comunicacion constante. Sin sorpresas.</p>
+              <p>Cotizacion detallada, plazos claros y comunicacion constante.</p>
             </div>
           </div>
           <div class="why-item">
-            <div class="why-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
+            <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
             <div>
               <h3>Calidad que se nota</h3>
-              <p>Materiales premium, acabados impecables y supervision profesional en cada etapa.</p>
+              <p>Materiales premium, acabados impecables y supervision en cada etapa.</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="why-visual reveal">
-        <div class="why-visual-accent"></div>
-        <span class="why-visual-label">Foto de proyecto proximamente</span>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- ========== PROJECTS ========== -->
-<section class="projects" id="proyectos">
-  <div class="container">
-    <div class="projects-header reveal">
-      <div>
-        <p class="section-label">Portafolio</p>
-        <h2>Proyectos</h2>
-      </div>
-      <p class="projects-note">* Imagenes de referencia — portafolio fotografico en desarrollo</p>
-    </div>
-    <div class="projects-grid">
-      <div class="project-card reveal stagger">
-        <div class="project-card-bg"></div>
-        <div class="project-card-overlay">
-          <span class="project-card-type">Construccion nueva</span>
-          <h3>Residencia completa</h3>
-          <p>Proyecto de casa habitacion desde cero — estructura, acabados y espacios exteriores.</p>
-        </div>
-      </div>
-      <div class="project-card reveal stagger">
-        <div class="project-card-bg"></div>
-        <div class="project-card-overlay">
-          <span class="project-card-type">Remodelacion</span>
-          <h3>Renovacion de cocina</h3>
-          <p>Transformacion completa con diseno integral en alianza con Olivewood.</p>
-        </div>
-      </div>
-      <div class="project-card reveal stagger">
-        <div class="project-card-bg"></div>
-        <div class="project-card-overlay">
-          <span class="project-card-type">Mejoras del hogar</span>
-          <h3>Alberca residencial</h3>
-          <p>Diseno, excavacion y construccion de alberca con area de descanso.</p>
-        </div>
-      </div>
-      <div class="project-card reveal stagger">
-        <div class="project-card-bg"></div>
-        <div class="project-card-overlay">
-          <span class="project-card-type">Ampliacion</span>
-          <h3>Segundo piso</h3>
-          <p>Ampliacion estructural con refuerzo de cimentacion y acabados premium.</p>
-        </div>
-      </div>
-      <div class="project-card reveal stagger">
-        <div class="project-card-bg"></div>
-        <div class="project-card-overlay">
-          <span class="project-card-type">Diseno</span>
-          <h3>Proyecto arquitectonico</h3>
-          <p>Planos ejecutivos, renders 3D y direccion de obra profesional.</p>
-        </div>
-      </div>
-      <div class="project-card reveal stagger">
-        <div class="project-card-bg"></div>
-        <div class="project-card-overlay">
-          <span class="project-card-type">Acabados</span>
-          <h3>Fachada y exteriores</h3>
-          <p>Renovacion de fachada con materiales contemporaneos y diseno funcional.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== PROCESS ========== -->
+<!-- PROCESS -->
 <section class="process" id="proceso">
   <div class="container">
     <div class="process-header reveal">
@@ -1118,41 +700,42 @@
     </div>
     <div class="process-steps">
       <div class="process-step reveal stagger">
-        <div class="process-num">01</div>
+        <div class="process-num">1</div>
         <h3>Platiquemos</h3>
-        <p>Cuentanos tu proyecto. Nos reunimos para entender tu vision, necesidades y presupuesto.</p>
+        <p>Nos reunimos para entender tu vision, necesidades y presupuesto.</p>
       </div>
       <div class="process-step reveal stagger">
-        <div class="process-num">02</div>
+        <div class="process-num">2</div>
         <h3>Diseno y cotizacion</h3>
-        <p>Desarrollamos la propuesta: planos, materiales y presupuesto detallado.</p>
+        <p>Planos, materiales y presupuesto detallado sin compromisos.</p>
       </div>
       <div class="process-step reveal stagger">
-        <div class="process-num">03</div>
+        <div class="process-num">3</div>
         <h3>Manos a la obra</h3>
-        <p>Nuestro equipo ejecuta con supervision profesional y reportes de avance.</p>
+        <p>Ejecucion profesional con reportes de avance constantes.</p>
       </div>
       <div class="process-step reveal stagger">
-        <div class="process-num">04</div>
+        <div class="process-num">4</div>
         <h3>Entrega</h3>
-        <p>Tu espacio listo, tal como lo imaginaste. Con garantia de calidad.</p>
+        <p>Tu espacio listo, tal como lo imaginaste.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== OLIVEWOOD ALLIANCE ========== -->
+<!-- OLIVEWOOD ALLIANCE -->
 <section class="alliance">
   <div class="container">
-    <div class="reveal">
-      <p class="section-label" style="text-align:center;">Alianza estrategica</p>
-      <h2 style="text-align:center;color:var(--navy);margin-bottom:48px;">De los cimientos al ultimo mueble</h2>
+    <div class="alliance-intro reveal">
+      <p class="section-label">Alianza estrategica</p>
+      <h2>De los cimientos al ultimo mueble</h2>
+      <p>Dos empresas, una solucion completa.</p>
     </div>
     <div class="alliance-grid reveal">
       <div class="alliance-col alliance-alefant">
         <span class="alliance-tag">Grupo Alefant</span>
         <h3>Construimos la estructura</h3>
-        <p>Todo lo que es obra civil, estructura y construccion esta en nuestras manos.</p>
+        <p>Todo lo que es obra civil, estructura y construccion.</p>
         <ul class="alliance-list">
           <li>Construccion nueva</li>
           <li>Remodelaciones</li>
@@ -1160,10 +743,13 @@
           <li>Diseno arquitectonico</li>
         </ul>
       </div>
+      <div class="alliance-img">
+        <img src="images/interior.jpg" alt="Interior de lujo" loading="lazy">
+      </div>
       <div class="alliance-col alliance-olivewood">
         <span class="alliance-tag">Olivewood</span>
         <h3>Disenamos los interiores</h3>
-        <p>Los acabados, muebles y cada detalle interior que hace de una casa un hogar.</p>
+        <p>Acabados, muebles y cada detalle que hace de una casa un hogar.</p>
         <ul class="alliance-list">
           <li>Diseno de interiores</li>
           <li>Mobiliario a medida</li>
@@ -1173,20 +759,20 @@
       </div>
     </div>
     <div class="alliance-bottom reveal">
-      <p><strong>Una solucion integral</strong> para quienes quieren resultados completos — sin buscar multiples proveedores.</p>
+      <p><strong>Una solucion integral</strong> — sin buscar multiples proveedores.</p>
     </div>
   </div>
 </section>
 
-<!-- ========== CTA ========== -->
+<!-- CTA -->
 <section class="cta-section" id="contacto">
   <div class="container cta-content reveal">
-    <p class="section-label" style="color:var(--navy);opacity:0.5;">Contacto</p>
+    <p class="section-label">Contacto</p>
     <h2>Listo para empezar<br>tu proyecto?</h2>
-    <p>Escribenos por WhatsApp y platiquemos sobre tu proxima construccion o remodelacion. La consulta inicial no tiene costo.</p>
+    <p>Escribenos por WhatsApp y platiquemos. La consulta inicial no tiene costo.</p>
     <div class="cta-buttons">
       <a href="https://wa.me/525573893756?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20construcci%C3%B3n" target="_blank" rel="noopener" class="btn btn-dark">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Escribenos por WhatsApp
       </a>
     </div>
@@ -1194,15 +780,15 @@
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div>
         <div class="footer-logo">
-          <svg viewBox="0 0 2022 1881" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="translate(-263.287,-710.727)"><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(331.312,309.504)"><path d="M0,-21.321C1.908,-18.204 5.698,-12.508 8.078,-10.096C11.383,-6.748 14.26,-10.137 17.766,-12.107C19.397,-13.024 19.868,-13.467 21.091,-14.249C25.828,-17.279 24.141,-15.637 26.147,-13.255C26.747,-12.542 28.216,-12.35 28.744,-11.721C31.987,-7.861 35.591,-2.086 38.938,2.278C32.832,1.58 22.829,2.673 17.271,0.641C15.621,0.037 9.022,-5.609 7.359,-7.146C3.392,-10.811 -2.505,-16.883 -5.923,-21.004C-6.648,-21.879 -7.3,-22.343 -7.08,-23.681C-4.032,-23.381 -2.439,-23.994 0,-21.321" fill="currentColor"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(63.189,170.575)"><path d="M0,87.141C39.25,58.501 81.053,28.557 120.702,0.219L121.009,0L121.383,0.071C196.57,14.412 273.353,29.231 348.285,44.513C273.039,30.972 196.188,16.322 121.049,1.811L121.729,1.663C111.699,8.762 85.895,27.006 76.174,33.849C51.047,51.544 25.229,69.656 0,87.141" fill="currentColor"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(341.981,581.985)"><path d="M0,-405.057C22.568,-372.865 43.551,-339.522 62.303,-304.955C71.338,-288.128 79.828,-270.946 86.868,-253.174C89.866,-245.5 92.675,-237.585 94.834,-229.621C96.505,-223.493 97.847,-217.263 98.531,-210.929C88.516,-157.348 76.291,-90.931 66.104,-38.59L77.702,-0.598L77.263,-0.921L102.02,-0.769L101.741,-0.589C105.764,-9.364 113.939,-26.713 117.989,-35.452C114.076,-26.773 106.232,-9.022 102.3,-0.334L102.22,-0.155L102.02,-0.154L77.263,-0.002L76.927,0L76.824,-0.325L64.868,-38.206L64.82,-38.357L64.849,-38.517C74.701,-92.632 86.615,-157.066 96.715,-211.13C95.823,-218.707 93.434,-229.111 90.706,-237.31C88.298,-244.836 85.441,-252.359 82.407,-259.664C74.961,-277.513 66.242,-294.817 57.028,-311.817C39.564,-343.796 20.374,-374.847 0,-405.057" fill="currentColor"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(368.572,467.707)"><path d="M0,-88.514C41.232,-41.869 149.34,-6.651 149.34,-6.651C149.34,-6.651 46.227,0 -26.001,-69.58" fill="currentColor" opacity="0.3"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(368.572,462.401)"><path d="M0,-83.208C7.242,-75.282 15.574,-68.426 24.277,-62.172C35.173,-54.379 46.733,-47.501 58.527,-41.166C68.757,-35.673 79.223,-30.591 89.802,-25.806C109.355,-17.015 129.308,-9.067 149.625,-2.218L154.199,-0.713C144.632,0 134.959,-0.188 125.408,-0.849C84.681,-3.769 44.08,-15.11 9.202,-36.649C4.157,-39.798 -0.862,-43.196 -5.624,-46.753C-12.795,-52.12 -19.628,-57.996 -26.001,-64.274" fill="currentColor"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(329.477,336.042)"><path d="M0,-45.75C3.297,-45.891 4.658,-43.895 4.658,-43.895L12.45,-32.783C15.171,-29.369 18.271,-31.588 18.271,-31.588L27.244,-37.268C29.723,-38.868 29.748,-37.613 29.748,-37.613C30.65,-35.143 31.927,-34.82 31.927,-34.82C33.102,-34.64 33.578,-33.919 33.578,-33.919L66.19,13.118C52.486,-35.928 21.632,-58.868 21.632,-58.868L-15.23,-48.562C-15.23,-48.562 -18.146,-47.845 -15.486,-46.918C-15.486,-46.918 -13.016,-46.157 -11.682,-46.359C-10.348,-46.562 0,-45.75 0,-45.75" fill="currentColor" opacity="0.5"/></g></g></g></svg>
+          <svg viewBox="0 0 2022 1881" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="translate(-263.287,-710.727)"><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(331.312,309.504)"><path d="M0,-21.321C1.908,-18.204 5.698,-12.508 8.078,-10.096C11.383,-6.748 14.26,-10.137 17.766,-12.107C19.397,-13.024 19.868,-13.467 21.091,-14.249C25.828,-17.279 24.141,-15.637 26.147,-13.255C26.747,-12.542 28.216,-12.35 28.744,-11.721C31.987,-7.861 35.591,-2.086 38.938,2.278C32.832,1.58 22.829,2.673 17.271,0.641C15.621,0.037 9.022,-5.609 7.359,-7.146C3.392,-10.811 -2.505,-16.883 -5.923,-21.004C-6.648,-21.879 -7.3,-22.343 -7.08,-23.681C-4.032,-23.381 -2.439,-23.994 0,-21.321" fill="currentColor"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(63.189,170.575)"><path d="M0,87.141C39.25,58.501 81.053,28.557 120.702,0.219L121.383,0.071C196.57,14.412 273.353,29.231 348.285,44.513C273.039,30.972 196.188,16.322 121.049,1.811L121.729,1.663C111.699,8.762 85.895,27.006 76.174,33.849C51.047,51.544 25.229,69.656 0,87.141" fill="currentColor"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(341.981,581.985)"><path d="M0,-405.057C22.568,-372.865 43.551,-339.522 62.303,-304.955C71.338,-288.128 79.828,-270.946 86.868,-253.174C89.866,-245.5 92.675,-237.585 94.834,-229.621C96.505,-223.493 97.847,-217.263 98.531,-210.929C88.516,-157.348 76.291,-90.931 66.104,-38.59L77.702,-0.598L77.263,-0.921L102.02,-0.769L101.741,-0.589C105.764,-9.364 113.939,-26.713 117.989,-35.452C114.076,-26.773 106.232,-9.022 102.3,-0.334L102.22,-0.155L102.02,-0.154L77.263,-0.002L76.927,0L76.824,-0.325L64.868,-38.206L64.82,-38.357L64.849,-38.517C74.701,-92.632 86.615,-157.066 96.715,-211.13C95.823,-218.707 93.434,-229.111 90.706,-237.31C88.298,-244.836 85.441,-252.359 82.407,-259.664C74.961,-277.513 66.242,-294.817 57.028,-311.817C39.564,-343.796 20.374,-374.847 0,-405.057" fill="currentColor"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(368.572,467.707)"><path d="M0,-88.514C41.232,-41.869 149.34,-6.651 149.34,-6.651C149.34,-6.651 46.227,0 -26.001,-69.58" fill="currentColor" opacity="0.3"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(368.572,462.401)"><path d="M0,-83.208C7.242,-75.282 15.574,-68.426 24.277,-62.172C35.173,-54.379 46.733,-47.501 58.527,-41.166C68.757,-35.673 79.223,-30.591 89.802,-25.806C109.355,-17.015 129.308,-9.067 149.625,-2.218L154.199,-0.713C144.632,0 134.959,-0.188 125.408,-0.849C84.681,-3.769 44.08,-15.11 9.202,-36.649C4.157,-39.798 -0.862,-43.196 -5.624,-46.753C-12.795,-52.12 -19.628,-57.996 -26.001,-64.274" fill="currentColor"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(329.477,336.042)"><path d="M0,-45.75C3.297,-45.891 4.658,-43.895 4.658,-43.895L12.45,-32.783C15.171,-29.369 18.271,-31.588 18.271,-31.588L27.244,-37.268C29.723,-38.868 29.748,-37.613 29.748,-37.613C30.65,-35.143 31.927,-34.82 31.927,-34.82C33.102,-34.64 33.578,-33.919 33.578,-33.919L66.19,13.118C52.486,-35.928 21.632,-58.868 21.632,-58.868L-15.23,-48.562C-15.23,-48.562 -18.146,-47.845 -15.486,-46.918C-15.486,-46.918 -13.016,-46.157 -11.682,-46.359C-10.348,-46.562 0,-45.75 0,-45.75" fill="currentColor" opacity="0.5"/></g></g></g></svg>
         </div>
-        <p class="footer-brand-name">GRUPO ALEFANT</p>
+        <p class="footer-brand">GRUPO ALEFANT</p>
         <p class="footer-desc">Construccion, remodelacion y diseno arquitectonico. Proyectos residenciales en Ciudad de Mexico y toda la republica.</p>
       </div>
       <div>
@@ -1218,8 +804,8 @@
       <div>
         <h4>Contacto</h4>
         <div class="footer-contact-item">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <a href="tel:+525573893756" style="color:rgba(255,255,255,0.5);">+52 55 7389 3756</a>
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.88.36 1.75.7 2.58a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.83.34 1.7.57 2.58.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="tel:+525573893756" style="color:rgba(255,255,255,0.4);">+52 55 7389 3756</a>
         </div>
         <div class="footer-contact-item">
           <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1233,62 +819,50 @@
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Grupo Alefant. Todos los derechos reservados.</span>
-      <span>Alianza con Olivewood</span>
+      <span>En alianza con Olivewood</span>
     </div>
   </div>
 </footer>
 
-<!-- ========== WHATSAPP FLOAT ========== -->
+<!-- WHATSAPP -->
 <a href="https://wa.me/525573893756?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20construcci%C3%B3n" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
-// Nav scroll effect
+// Nav
 const nav = document.getElementById('nav');
-let lastScroll = 0;
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-}, { passive: true });
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 80), { passive: true });
 
-// Hamburger menu
+// Hamburger
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navLinks.classList.toggle('open');
-});
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navLinks.classList.remove('open');
-  });
-});
+hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navLinks.classList.toggle('open'); });
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hamburger.classList.remove('active'); navLinks.classList.remove('open'); }));
 
-// Scroll reveal with Intersection Observer
-const revealElements = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('revealed');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-revealElements.forEach(el => revealObserver.observe(el));
+// Reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      const offset = nav.offsetHeight + 20;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
+    const t = document.querySelector(this.getAttribute('href'));
+    if (t) { const top = t.getBoundingClientRect().top + scrollY - nav.offsetHeight - 20; window.scrollTo({ top, behavior: 'smooth' }); }
   });
 });
+
+// Subtle hero parallax (desktop only)
+if (window.innerWidth > 768) {
+  const heroBg = document.querySelector('.hero-bg');
+  window.addEventListener('scroll', () => {
+    const s = window.scrollY;
+    if (s < window.innerHeight) heroBg.style.transform = `translateY(${s * 0.15}px)`;
+  }, { passive: true });
+}
 </script>
 
 </body>
