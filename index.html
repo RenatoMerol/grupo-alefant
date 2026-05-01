@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grupo Alefant | Construccion, Remodelacion y Diseno Arquitectonico en Mexico</title>
-  <meta name="description" content="Empresa de construccion, remodelacion y diseno arquitectonico en Ciudad de Mexico y toda la republica. Construimos lo que imaginas.">
+  <meta name="description" content="Empresa de construccion, remodelacion y diseno arquitectonico en Ciudad de Mexico y toda la republica. Proyectos residenciales con ejecucion integral.">
   <meta property="og:title" content="Grupo Alefant | Construccion y Remodelacion">
   <meta property="og:description" content="Construccion, remodelacion y diseno arquitectonico en Mexico. Del diseno a la entrega de llaves.">
   <meta property="og:type" content="website">
@@ -58,10 +58,10 @@
 
     /* ===== TYPOGRAPHY ===== */
     h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height: 1.05; }
-    h1 { font-size: clamp(3rem, 7.5vw, 6rem); letter-spacing: -0.03em; }
-    h2 { font-size: clamp(2.2rem, 4.5vw, 3.6rem); letter-spacing: -0.02em; }
-    h3 { font-size: clamp(1.15rem, 1.8vw, 1.4rem); }
-    p { line-height: 1.75; font-size: clamp(0.95rem, 1.1vw, 1.1rem); }
+    h1 { font-size: 6rem; letter-spacing: 0; }
+    h2 { font-size: 3.6rem; letter-spacing: 0; }
+    h3 { font-size: 1.4rem; letter-spacing: 0; }
+    p { line-height: 1.75; font-size: 1rem; }
 
     /* ===== UTILITIES ===== */
     .container { width: 88%; max-width: var(--max-w); margin: 0 auto; }
@@ -70,7 +70,7 @@
       font-family: var(--font-body);
       font-weight: 700;
       font-size: 0.72rem;
-      letter-spacing: 0.25em;
+      letter-spacing: 0;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 16px;
@@ -83,7 +83,7 @@
       border-radius: 3px;
       font-weight: 700;
       font-size: 0.9rem;
-      letter-spacing: 0.04em;
+      letter-spacing: 0;
       text-transform: uppercase;
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -128,13 +128,13 @@
     .nav.scrolled .nav-logo svg { filter: none; }
     .nav-logo-text {
       font-family: var(--font-display); font-size: 0.85rem;
-      letter-spacing: 0.12em; color: var(--white); transition: color 0.4s;
+      letter-spacing: 0; color: var(--white); transition: color 0.4s;
     }
     .nav-logo-text span { font-family: var(--font-body); font-weight: 300; opacity: 0.6; }
     .nav.scrolled .nav-logo-text { color: var(--navy); }
     .nav-links { display: flex; align-items: center; gap: 40px; }
     .nav-links a {
-      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0;
       color: rgba(255,255,255,0.7); transition: color 0.3s;
     }
     .nav-links a:hover { color: var(--white); }
@@ -185,7 +185,7 @@
     }
     .hero-label {
       font-family: var(--font-body); font-weight: 700;
-      font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
+      font-size: 0.72rem; letter-spacing: 0; text-transform: uppercase;
       color: var(--gold); margin-bottom: 32px;
       animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
     }
@@ -199,7 +199,7 @@
     }
     @keyframes lineExpand { to { width: 64px; } }
     .hero-sub {
-      font-family: var(--font-serif); font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+      font-family: var(--font-serif); font-size: 1.35rem;
       font-weight: 400; font-style: italic; color: rgba(255,255,255,0.55);
       max-width: 480px; margin-bottom: 48px; line-height: 1.7;
       animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
@@ -215,7 +215,7 @@
     .hero-scroll {
       position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
       z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px;
-      color: rgba(255,255,255,0.25); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.25); font-size: 0.7rem; letter-spacing: 0; text-transform: uppercase;
       animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
     }
     .scroll-line {
@@ -290,7 +290,7 @@
       background: linear-gradient(to top, rgba(27,48,73,0.95) 0%, rgba(27,48,73,0.15) 70%);
     }
     .portfolio-card-type {
-      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0;
       text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
     }
     .portfolio-card h3 { color: var(--white); font-size: 1.1rem; margin-bottom: 6px; }
@@ -379,12 +379,12 @@
     .alliance-img img { width: 100%; height: 100%; object-fit: cover; }
     .alliance-olivewood { background: var(--pearl); }
     .alliance-tag {
-      font-weight: 700; font-size: 0.68rem; letter-spacing: 0.22em;
+      font-weight: 700; font-size: 0.68rem; letter-spacing: 0;
       text-transform: uppercase; margin-bottom: 20px;
     }
     .alliance-alefant .alliance-tag { color: var(--gold); }
     .alliance-olivewood .alliance-tag { color: var(--steel); }
-    .alliance-col h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); margin-bottom: 16px; }
+    .alliance-col h3 { font-size: 1.7rem; margin-bottom: 16px; }
     .alliance-olivewood h3 { color: var(--navy); }
     .alliance-col p { font-size: 0.9rem; line-height: 1.7; }
     .alliance-alefant p { color: rgba(255,255,255,0.6); }
@@ -426,11 +426,11 @@
     .footer { background: var(--navy); padding: 72px 0 32px; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 56px; margin-bottom: 56px; }
     .footer-logo svg { width: 38px; height: auto; filter: brightness(0) invert(1); margin-bottom: 16px; }
-    .footer-brand { font-family: var(--font-display); color: var(--white); font-size: 1rem; letter-spacing: 0.06em; margin-bottom: 12px; }
+    .footer-brand { font-family: var(--font-display); color: var(--white); font-size: 1rem; letter-spacing: 0; margin-bottom: 12px; }
     .footer-desc { font-size: 0.85rem; color: rgba(255,255,255,0.35); max-width: 300px; line-height: 1.65; }
     .footer h4 {
       font-family: var(--font-body); font-weight: 700; font-size: 0.7rem;
-      letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+      letter-spacing: 0; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
     }
     .footer-links a { display: block; font-size: 0.85rem; color: rgba(255,255,255,0.4); padding: 5px 0; transition: color 0.3s; }
     .footer-links a:hover { color: var(--white); }
@@ -513,6 +513,788 @@
       .cta-buttons { flex-direction: column; align-items: center; }
       .wa-float { bottom: 20px; right: 20px; width: 52px; height: 52px; }
     }
+
+    /* ===== PREMIUM PHOTO DIRECTION ===== */
+    * { letter-spacing: 0 !important; }
+    h1 { font-size: 6rem; letter-spacing: 0; }
+    h2 { font-size: 3.8rem; letter-spacing: 0; }
+    h3 { font-size: 1.35rem; letter-spacing: 0; }
+    p { font-size: 1rem; }
+    .section-label {
+      letter-spacing: 0;
+      margin-bottom: 18px;
+      color: var(--gold);
+    }
+    .section-head {
+      margin-bottom: 68px;
+    }
+    .split-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.62fr);
+      gap: 72px;
+      align-items: end;
+    }
+    .split-head h2 {
+      color: var(--navy);
+      max-width: 760px;
+    }
+    .split-head > p {
+      color: var(--steel);
+      border-left: 1px solid rgba(201,169,110,0.45);
+      padding-left: 28px;
+    }
+
+    .editorial-hero {
+      display: block;
+      min-height: 100vh;
+      min-height: 100dvh;
+      isolation: isolate;
+    }
+    .editorial-hero .hero-bg {
+      background-image: url('images/facade.jpg');
+      filter: saturate(0.92) contrast(1.04);
+    }
+    .editorial-hero .hero-overlay {
+      background:
+        linear-gradient(90deg, rgba(27,48,73,0.94) 0%, rgba(27,48,73,0.78) 46%, rgba(27,48,73,0.5) 100%),
+        linear-gradient(180deg, rgba(27,48,73,0.08) 0%, rgba(27,48,73,0.92) 100%);
+    }
+    .editorial-hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 72px;
+      min-height: 100vh;
+      min-height: 100dvh;
+      align-items: center;
+      padding: 140px 0 190px;
+    }
+    .editorial-hero .hero-content {
+      max-width: 840px;
+      padding: 0;
+    }
+    .editorial-hero h1 {
+      max-width: 900px;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+    .editorial-hero .hero-sub {
+      max-width: 600px;
+      font-size: 1.28rem;
+      color: rgba(255,255,255,0.64);
+    }
+    .hero-proof {
+      color: var(--white);
+      border-left: 1px solid rgba(201,169,110,0.7);
+      padding: 28px 0 28px 30px;
+      align-self: end;
+      margin-bottom: 80px;
+      animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.95s both;
+    }
+    .hero-proof span {
+      display: block;
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .hero-proof strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 2.1rem;
+      line-height: 1.05;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .hero-proof p {
+      color: rgba(255,255,255,0.52);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    .hero-blueprint {
+      position: absolute;
+      z-index: 1;
+      right: 5vw;
+      top: 18vh;
+      width: min(34vw, 420px);
+      opacity: 0.2;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.2;
+      stroke-dasharray: 520;
+      stroke-dashoffset: 520;
+      animation: blueprintDraw 3.6s ease 0.8s forwards;
+    }
+    @keyframes blueprintDraw { to { stroke-dashoffset: 0; } }
+    .hero-kpis {
+      position: absolute;
+      z-index: 4;
+      left: 50%;
+      bottom: 28px;
+      transform: translateX(-50%);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.18);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      background: rgba(27,48,73,0.46);
+      backdrop-filter: blur(18px);
+    }
+    .hero-kpis > div {
+      padding: 24px 28px;
+      min-height: 112px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-kpis > div:last-child { border-right: 0; }
+    .hero-kpis span {
+      display: block;
+      color: var(--gold);
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      margin-bottom: 6px;
+    }
+    .hero-kpis strong {
+      display: block;
+      color: var(--white);
+      font-size: 0.92rem;
+      margin-bottom: 6px;
+    }
+    .hero-kpis p {
+      color: rgba(255,255,255,0.46);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+    .editorial-hero .hero-scroll {
+      left: auto;
+      right: 5vw;
+      bottom: 168px;
+      transform: none;
+    }
+
+    .service-atelier {
+      background:
+        linear-gradient(90deg, rgba(240,237,234,0.82) 0 32%, transparent 32%),
+        var(--white);
+    }
+    .service-showcase {
+      display: grid;
+      grid-template-columns: minmax(360px, 0.9fr) minmax(0, 1.1fr);
+      gap: 64px;
+      align-items: start;
+    }
+    .service-visual {
+      position: sticky;
+      top: 110px;
+      min-height: 620px;
+      overflow: hidden;
+      border-radius: 6px;
+      background: var(--navy);
+      box-shadow: 0 32px 80px rgba(27,48,73,0.18);
+    }
+    .service-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 620px;
+      object-fit: cover;
+      opacity: 0.92;
+      transition: opacity 0.35s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .service-visual.is-changing img { opacity: 0; transform: scale(1.02); }
+    .service-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(27,48,73,0.88), rgba(27,48,73,0.04) 56%);
+    }
+    .service-drawing {
+      position: absolute;
+      inset: auto 26px 88px auto;
+      width: 46%;
+      z-index: 2;
+      fill: none;
+      stroke: rgba(201,169,110,0.62);
+      stroke-width: 1.2;
+      opacity: 0.72;
+      pointer-events: none;
+    }
+    .visual-caption {
+      position: absolute;
+      z-index: 3;
+      left: 30px;
+      right: 30px;
+      bottom: 30px;
+      color: rgba(255,255,255,0.72);
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      line-height: 1.35;
+    }
+    .service-list {
+      border-top: 1px solid rgba(27,48,73,0.14);
+    }
+    .service-row {
+      position: relative;
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      gap: 24px;
+      padding: 34px 0;
+      border-bottom: 1px solid rgba(27,48,73,0.14);
+      cursor: pointer;
+      outline: none;
+    }
+    .service-row::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .service-row:hover::before,
+    .service-row:focus-visible::before,
+    .service-row.active::before {
+      width: 100%;
+    }
+    .service-row > span {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      line-height: 1;
+      color: rgba(201,169,110,0.34);
+    }
+    .service-row h3 {
+      color: var(--navy);
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+    }
+    .service-row p {
+      color: var(--steel);
+      max-width: 560px;
+      font-size: 0.98rem;
+    }
+
+    .portfolio-editorial {
+      background:
+        radial-gradient(circle at 18% 10%, rgba(201,169,110,0.14), transparent 28%),
+        var(--navy);
+    }
+    .portfolio-editorial .portfolio-header {
+      align-items: end;
+      gap: 32px;
+    }
+    .portfolio-editorial .portfolio-note {
+      max-width: 340px;
+      color: rgba(255,255,255,0.48);
+      font-style: normal;
+      line-height: 1.6;
+    }
+    .project-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+    .project-feature,
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      background: var(--navy-light);
+    }
+    .project-feature {
+      min-height: 690px;
+    }
+    .project-feature img,
+    .project-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .project-feature:hover img,
+    .project-card:hover img {
+      transform: scale(1.045);
+    }
+    .project-feature::after,
+    .project-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(27,48,73,0.92), rgba(27,48,73,0.04) 62%);
+    }
+    .project-copy,
+    .project-card div {
+      position: absolute;
+      z-index: 2;
+      left: 34px;
+      right: 34px;
+      bottom: 34px;
+      color: var(--white);
+    }
+    .project-copy span,
+    .project-card span {
+      display: block;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .project-copy h3 {
+      font-size: 2.25rem;
+      max-width: 620px;
+      margin-bottom: 14px;
+    }
+    .project-copy p {
+      max-width: 520px;
+      color: rgba(255,255,255,0.58);
+    }
+    .project-stack {
+      display: grid;
+      gap: 18px;
+    }
+    .project-card {
+      min-height: 218px;
+    }
+    .project-card h3 {
+      color: var(--white);
+      font-size: 1.25rem;
+    }
+
+    .signature-section {
+      padding: var(--section-py) 0;
+      background: var(--pearl);
+      overflow: hidden;
+    }
+    .signature-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(420px, 1.18fr);
+      gap: 76px;
+      align-items: center;
+    }
+    .signature-copy h2 {
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+    .signature-copy > p {
+      color: var(--steel);
+      margin-bottom: 36px;
+    }
+    .signature-points {
+      display: grid;
+      gap: 20px;
+      border-top: 1px solid rgba(27,48,73,0.12);
+      padding-top: 28px;
+    }
+    .signature-points div {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+    .signature-points strong {
+      color: var(--navy);
+      font-size: 0.92rem;
+    }
+    .signature-points span {
+      color: var(--steel);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .signature-photos {
+      display: grid;
+      grid-template-columns: 1fr 0.68fr;
+      grid-template-rows: 260px 260px;
+      gap: 16px;
+    }
+    .signature-photos img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 28px 70px rgba(27,48,73,0.12);
+    }
+    .signature-photos img:first-child {
+      grid-row: span 2;
+    }
+
+    .trust-studio {
+      background: var(--white);
+    }
+    .trust-studio .why-grid {
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 70px;
+      min-height: 650px;
+    }
+    .trust-studio .why-img {
+      margin-left: 0;
+      border-radius: 6px;
+    }
+    .trust-studio .why-text {
+      padding: 40px 0;
+    }
+    .trust-studio .why-text > p:not(.section-label) {
+      max-width: 560px;
+    }
+
+    .process-atelier {
+      background:
+        linear-gradient(rgba(27,48,73,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(27,48,73,0.025) 1px, transparent 1px),
+        var(--pearl);
+      background-size: 56px 56px;
+    }
+    .process-layout {
+      display: block;
+    }
+    .process-layout .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      position: relative;
+    }
+    .process-layout .process-steps::before {
+      display: none;
+    }
+    .process-layout .process-step {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+      overflow: hidden;
+      min-height: 100%;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(27,48,73,0.1);
+      border-radius: 6px;
+      box-shadow: 0 24px 58px rgba(27,48,73,0.08);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .process-layout .process-step:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 70px rgba(27,48,73,0.14);
+    }
+    .process-step-photo {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .process-step-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.92;
+      transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .process-layout .process-step:hover .process-step-photo img {
+      transform: scale(1.05);
+    }
+    .process-step-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(27,48,73,0.42), transparent 62%);
+    }
+    .process-step-body {
+      display: grid;
+      gap: 18px;
+      padding: 24px 24px 28px;
+      flex: 1;
+    }
+    .process-layout .process-num {
+      margin: 0;
+      width: 54px;
+      height: 54px;
+      background: var(--white);
+      z-index: 2;
+    }
+    .process-step-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .process-layout .process-step h3 {
+      font-size: 1.18rem;
+      margin-bottom: 0;
+    }
+    .process-layout .process-step p {
+      max-width: none;
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    .alliance-premium {
+      background: var(--white);
+    }
+    .alliance-premium .alliance-intro {
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .alliance-composition {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.75fr) minmax(360px, 1.15fr) minmax(280px, 0.75fr);
+      align-items: stretch;
+      min-height: 560px;
+    }
+    .alliance-panel {
+      padding: 58px 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .alliance-panel span {
+      display: block;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .alliance-panel h3 {
+      font-size: 1.75rem;
+      line-height: 1.12;
+      margin-bottom: 22px;
+    }
+    .alliance-photo {
+      position: relative;
+      min-height: 560px;
+      overflow: hidden;
+    }
+    .alliance-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .alliance-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(27,48,73,0.55), transparent 55%);
+    }
+    .alliance-ribbon {
+      position: absolute;
+      z-index: 2;
+      left: 24px;
+      bottom: 24px;
+      color: var(--navy);
+      background: var(--gold);
+      padding: 12px 18px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 0.82rem;
+    }
+
+    .cta-editorial {
+      background: var(--navy);
+      min-height: 620px;
+      display: grid;
+      align-items: center;
+    }
+    .cta-editorial::before {
+      opacity: 0.28;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    }
+    .cta-photo {
+      position: absolute;
+      inset: 0 0 0 48%;
+      background:
+        linear-gradient(90deg, var(--navy), rgba(27,48,73,0.16)),
+        url('images/remodel.jpg') center/cover no-repeat;
+      opacity: 0.74;
+    }
+    .cta-editorial .cta-content {
+      text-align: left;
+      max-width: 640px;
+      margin: 0;
+      padding-right: 0;
+    }
+    .cta-editorial .section-label {
+      color: var(--gold);
+      opacity: 1;
+    }
+    .cta-editorial h2 {
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .cta-editorial .cta-content > p {
+      margin: 0 0 40px;
+      color: rgba(255,255,255,0.6);
+      font-size: 1.18rem;
+      max-width: 520px;
+    }
+    .cta-editorial .cta-buttons {
+      justify-content: flex-start;
+    }
+    .cta-editorial .cta-phone {
+      color: rgba(255,255,255,0.45);
+      text-align: left;
+    }
+    .cta-editorial .cta-phone a {
+      color: var(--gold);
+    }
+
+    @media (max-width: 1120px) {
+      h1 { font-size: 4.8rem; }
+      h2 { font-size: 3rem; }
+      .editorial-hero-inner,
+      .service-showcase,
+      .signature-grid,
+      .process-layout {
+        gap: 48px;
+      }
+      .alliance-composition {
+        grid-template-columns: 1fr;
+      }
+      .alliance-photo {
+        order: -1;
+        min-height: 420px;
+      }
+      .process-layout .process-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      h1 { font-size: 3.7rem; }
+      h2 { font-size: 2.55rem; }
+      .split-head,
+      .editorial-hero-inner,
+      .service-showcase,
+      .project-layout,
+      .signature-grid,
+      .trust-studio .why-grid,
+      .process-layout {
+        grid-template-columns: 1fr;
+      }
+      .editorial-hero-inner {
+        padding: 128px 0 250px;
+        align-items: end;
+      }
+      .hero-proof {
+        margin: 0;
+        max-width: 420px;
+      }
+      .hero-kpis {
+        grid-template-columns: 1fr;
+        bottom: 18px;
+      }
+      .hero-kpis > div {
+        min-height: auto;
+        padding: 16px 20px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      .hero-kpis > div:last-child {
+        border-bottom: 0;
+      }
+      .editorial-hero .hero-scroll,
+      .hero-blueprint {
+        display: none;
+      }
+      .service-visual,
+      .service-visual img {
+        min-height: 420px;
+      }
+      .service-visual {
+        position: relative;
+        top: auto;
+      }
+      .project-feature {
+        min-height: 520px;
+      }
+      .signature-photos {
+        grid-template-rows: 220px 220px;
+      }
+      .cta-photo {
+        inset: 0;
+        opacity: 0.28;
+      }
+    }
+
+    @media (max-width: 640px) {
+      :root { --section-py: 84px; }
+      h1 { font-size: 3rem; }
+      h2 { font-size: 2.15rem; }
+      h3 { font-size: 1.18rem; }
+      .container {
+        width: 90%;
+      }
+      .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 22px;
+      }
+      .editorial-hero-inner {
+        padding: 118px 0 300px;
+      }
+      .editorial-hero .hero-sub {
+        font-size: 1.08rem;
+      }
+      .hero-proof strong {
+        font-size: 1.6rem;
+      }
+      .hero-kpis {
+        width: 90%;
+      }
+      .split-head > p {
+        border-left: 0;
+        padding-left: 0;
+      }
+      .service-row {
+        grid-template-columns: 54px minmax(0, 1fr);
+        gap: 16px;
+        padding: 28px 0;
+      }
+      .service-row > span {
+        font-size: 2rem;
+      }
+      .project-feature {
+        min-height: 460px;
+      }
+      .project-copy,
+      .project-card div {
+        left: 24px;
+        right: 24px;
+        bottom: 24px;
+      }
+      .project-copy h3 {
+        font-size: 1.7rem;
+      }
+      .signature-points div {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+      .signature-photos {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 220px);
+      }
+      .signature-photos img:first-child {
+        grid-row: span 1;
+      }
+      .process-layout .process-steps {
+        grid-template-columns: 1fr;
+      }
+      .process-step-photo {
+        min-height: 240px;
+        aspect-ratio: 16 / 10;
+      }
+      .alliance-panel {
+        padding: 40px 28px;
+      }
+      .cta-editorial {
+        min-height: 560px;
+      }
+      .cta-editorial .cta-content {
+        text-align: left;
+      }
+    }
   </style>
 </head>
 <body>
@@ -535,123 +1317,167 @@
 </header>
 
 <!-- HERO -->
-<section class="hero" id="inicio">
+<section class="hero editorial-hero" id="inicio">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-grid"></div>
-  <div class="container hero-content">
-    <p class="hero-label">Grupo Alefant</p>
-    <h1>Construimos<br>lo que imaginas</h1>
-    <div class="hero-line"></div>
-    <p class="hero-sub">Construccion, remodelacion y diseno arquitectonico en Ciudad de Mexico y toda la republica mexicana.</p>
-    <div class="hero-ctas">
-      <a href="https://wa.me/525528848144?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20construcci%C3%B3n" target="_blank" rel="noopener" class="btn btn-primary">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Cotiza tu proyecto
-      </a>
-      <a href="#servicios" class="btn btn-outline">Nuestros servicios</a>
+  <svg class="hero-blueprint" viewBox="0 0 360 360" aria-hidden="true">
+    <path d="M38 292h284M76 292V82h176v210M112 292V124h104v168M76 150h176M76 208h176M112 174h104M112 240h104"/>
+    <circle cx="76" cy="82" r="10"/><circle cx="252" cy="82" r="10"/><circle cx="112" cy="124" r="7"/><circle cx="216" cy="124" r="7"/>
+  </svg>
+  <div class="container editorial-hero-inner">
+    <div class="hero-content">
+      <p class="hero-label">Residencial | Obra civil | Interiores</p>
+      <h1>Construccion residencial con precision de estudio</h1>
+      <div class="hero-line"></div>
+      <p class="hero-sub">Desarrollamos, remodelamos y elevamos espacios habitables con una direccion integral: arquitectura, obra, acabados y entrega.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/525528848144?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20construcci%C3%B3n" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Cotiza tu proyecto
+        </a>
+        <a href="#proyectos" class="btn btn-outline">Ver trabajos</a>
+      </div>
+    </div>
+    <aside class="hero-proof" aria-label="Alcance de Grupo Alefant">
+      <span>CDMX + Republica Mexicana</span>
+      <strong>Direccion integral de obra</strong>
+      <p>Un solo equipo coordina concepto, presupuesto, ejecucion, acabados y seguimiento.</p>
+    </aside>
+  </div>
+  <div class="container hero-kpis">
+    <div>
+      <span>01</span>
+      <strong>Arquitectura</strong>
+      <p>Proyecto, criterio espacial y planeacion.</p>
+    </div>
+    <div>
+      <span>02</span>
+      <strong>Construccion</strong>
+      <p>Obra civil, remodelacion y supervision.</p>
+    </div>
+    <div>
+      <span>03</span>
+      <strong>Interiores</strong>
+      <p>Acabados, mobiliario y detalle final.</p>
     </div>
   </div>
   <div class="hero-scroll"><span>Explora</span><div class="scroll-line"></div></div>
 </section>
 
 <!-- SERVICES -->
-<section class="services" id="servicios">
+<section class="services service-atelier" id="servicios">
   <div class="container">
-    <div class="services-header reveal">
-      <p class="section-label">Servicios</p>
-      <h2>Lo que hacemos</h2>
+    <div class="section-head split-head reveal">
+      <div>
+        <p class="section-label">Servicios</p>
+        <h2>Una firma para todo el recorrido</h2>
+      </div>
+      <p>El trabajo se organiza como un sistema: diagnostico, concepto, presupuesto, ejecucion y entrega. Cada servicio vive conectado al resultado final.</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card reveal stagger">
-        <div class="service-num">01</div>
-        <h3>Construccion nueva</h3>
-        <p>Desde los cimientos hasta la entrega final. Casas, departamentos y espacios comerciales construidos con precision.</p>
+    <div class="service-showcase">
+      <div class="service-visual reveal">
+        <img id="serviceImage" src="images/construction.jpg" alt="Obra residencial en proceso" loading="lazy">
+        <svg class="service-drawing" viewBox="0 0 420 320" aria-hidden="true">
+          <path d="M32 262h356M62 262V78h238v184M104 262V122h154v140M62 148h238M62 206h238M104 176h154"/>
+          <path d="M300 78l64 58v126M300 78v58h64"/>
+        </svg>
+        <div class="visual-caption" id="serviceCaption">Obra nueva con planeacion, estructura y acabados coordinados.</div>
       </div>
-      <div class="service-card reveal stagger">
-        <div class="service-num">02</div>
-        <h3>Remodelacion</h3>
-        <p>Transformamos espacios existentes. Banos, cocinas, fachadas — cada detalle pensado para durar.</p>
-      </div>
-      <div class="service-card reveal stagger">
-        <div class="service-num">03</div>
-        <h3>Mejoras del hogar</h3>
-        <p>Albercas, ampliaciones, terrazas y mas. Llevamos tu hogar al siguiente nivel.</p>
-      </div>
-      <div class="service-card reveal stagger">
-        <div class="service-num">04</div>
-        <h3>Diseno arquitectonico</h3>
-        <p>Planos, renders y direccion de obra. Tu vision, nuestra ingenieria.</p>
+      <div class="service-list reveal">
+        <article class="service-row active" tabindex="0" data-image="images/construction.jpg" data-caption="Obra nueva con planeacion, estructura y acabados coordinados.">
+          <span>01</span>
+          <div>
+            <h3>Construccion nueva</h3>
+            <p>Residencias, departamentos y espacios comerciales desarrollados desde cimentacion hasta entrega.</p>
+          </div>
+        </article>
+        <article class="service-row" tabindex="0" data-image="images/remodel.jpg" data-caption="Remodelaciones que actualizan el espacio sin perder control de obra ni presupuesto.">
+          <span>02</span>
+          <div>
+            <h3>Remodelacion</h3>
+            <p>Cocinas, banos, fachadas, interiores y redistribuciones con ejecucion limpia y precisa.</p>
+          </div>
+        </article>
+        <article class="service-row" tabindex="0" data-image="images/pool.jpg" data-caption="Mejoras exteriores pensadas como extensiones naturales de la vivienda.">
+          <span>03</span>
+          <div>
+            <h3>Mejoras del hogar</h3>
+            <p>Albercas, terrazas, ampliaciones y detalles que elevan la vida diaria de la casa.</p>
+          </div>
+        </article>
+        <article class="service-row" tabindex="0" data-image="images/architecture.jpg" data-caption="Direccion arquitectonica para convertir ideas en planos, materiales y decisiones de obra.">
+          <span>04</span>
+          <div>
+            <h3>Diseno arquitectonico</h3>
+            <p>Planos, renders, seleccion de materiales y direccion para que el proyecto avance con claridad.</p>
+          </div>
+        </article>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PORTFOLIO -->
-<section class="portfolio" id="proyectos">
+<section class="portfolio portfolio-editorial" id="proyectos">
   <div class="container">
     <div class="portfolio-header reveal">
       <div>
         <p class="section-label">Portafolio</p>
-        <h2>Proyectos</h2>
+        <h2>Capacidades vistas como proyectos</h2>
       </div>
-      <p class="portfolio-note">Imagenes de referencia — portafolio fotografico en desarrollo</p>
+      <p class="portfolio-note">Galeria de obra, remodelacion, interiores y exteriorismo.</p>
     </div>
-    <div class="portfolio-grid">
-      <div class="portfolio-card reveal stagger">
-        <img src="images/hero.jpg" alt="Casa residencial moderna" loading="lazy">
-        <div class="portfolio-card-overlay">
-          <span class="portfolio-card-type">Construccion nueva</span>
-          <h3>Residencia completa</h3>
-          <p>Proyecto de casa habitacion desde cero — estructura, acabados y exteriores.</p>
+    <div class="project-layout">
+      <article class="project-feature reveal">
+        <img src="images/hero.jpg" alt="Residencia moderna con fachada limpia" loading="lazy">
+        <div class="project-copy">
+          <span>Residencial integral</span>
+          <h3>De la estructura a la experiencia de habitar</h3>
+          <p>Coordinamos estructura, acabados, exteriores e interiores para que la residencia funcione como un proyecto completo.</p>
         </div>
-      </div>
-      <div class="portfolio-card reveal stagger">
-        <img src="images/kitchen.jpg" alt="Cocina remodelada de lujo" loading="lazy">
-        <div class="portfolio-card-overlay">
-          <span class="portfolio-card-type">Remodelacion</span>
-          <h3>Renovacion de cocina</h3>
-          <p>Transformacion completa en alianza con Olivewood.</p>
-        </div>
-      </div>
-      <div class="portfolio-card reveal stagger">
-        <img src="images/pool.jpg" alt="Alberca residencial" loading="lazy">
-        <div class="portfolio-card-overlay">
-          <span class="portfolio-card-type">Mejoras del hogar</span>
-          <h3>Alberca residencial</h3>
-          <p>Diseno, excavacion y construccion con area de descanso.</p>
-        </div>
-      </div>
-      <div class="portfolio-card reveal stagger">
-        <img src="images/remodel.jpg" alt="Espacio remodelado moderno" loading="lazy">
-        <div class="portfolio-card-overlay">
-          <span class="portfolio-card-type">Remodelacion</span>
-          <h3>Espacios interiores</h3>
-          <p>Acabados contemporaneos con diseno funcional.</p>
-        </div>
-      </div>
-      <div class="portfolio-card reveal stagger">
-        <img src="images/architecture.jpg" alt="Diseno arquitectonico" loading="lazy">
-        <div class="portfolio-card-overlay">
-          <span class="portfolio-card-type">Diseno</span>
-          <h3>Proyecto arquitectonico</h3>
-          <p>Planos ejecutivos y direccion de obra profesional.</p>
-        </div>
-      </div>
-      <div class="portfolio-card reveal stagger">
-        <img src="images/construction.jpg" alt="Proceso de construccion" loading="lazy">
-        <div class="portfolio-card-overlay">
-          <span class="portfolio-card-type">Obra</span>
-          <h3>En proceso</h3>
-          <p>Supervision profesional y calidad en cada etapa.</p>
-        </div>
+      </article>
+      <div class="project-stack">
+        <article class="project-card reveal stagger">
+          <img src="images/kitchen.jpg" alt="Cocina residencial remodelada" loading="lazy">
+          <div><span>Remodelacion</span><h3>Cocinas e interiores</h3></div>
+        </article>
+        <article class="project-card reveal stagger">
+          <img src="images/pool.jpg" alt="Alberca residencial con area exterior" loading="lazy">
+          <div><span>Exteriorismo</span><h3>Albercas y terrazas</h3></div>
+        </article>
+        <article class="project-card reveal stagger">
+          <img src="images/architecture.jpg" alt="Proyecto arquitectonico en proceso de diseno" loading="lazy">
+          <div><span>Proyecto</span><h3>Arquitectura y direccion</h3></div>
+        </article>
       </div>
     </div>
   </div>
 </section>
 
+<!-- SIGNATURE -->
+<section class="signature-section">
+  <div class="container signature-grid">
+    <div class="signature-copy reveal">
+      <p class="section-label">Grupo Alefant</p>
+      <h2>Construccion integral para residencias con alto nivel de detalle</h2>
+      <p>Reunimos arquitectura, obra civil, remodelacion y acabados para que cada proyecto avance con una vision clara desde el primer trazo hasta la entrega final.</p>
+      <div class="signature-points">
+        <div><strong>Obra civil</strong><span>Cimentacion, estructura, instalaciones y supervision tecnica en cada etapa.</span></div>
+        <div><strong>Remodelacion</strong><span>Transformacion de interiores, fachadas, cocinas, banos, terrazas y areas exteriores.</span></div>
+        <div><strong>Acabados</strong><span>Materiales, carpinteria, mobiliario y detalles coordinados junto a Olivewood.</span></div>
+      </div>
+    </div>
+    <div class="signature-photos reveal">
+      <img src="images/facade.jpg" alt="Fachada residencial moderna" loading="lazy">
+      <img src="images/interior.jpg" alt="Interior residencial de alta gama" loading="lazy">
+      <img src="images/why-alefant.jpg" alt="Detalle constructivo profesional" loading="lazy">
+    </div>
+  </div>
+</section>
+
 <!-- WHY ALEFANT -->
-<section class="why" id="nosotros">
+<section class="why trust-studio" id="nosotros">
   <div class="container">
     <div class="why-grid">
       <div class="why-img reveal">
@@ -660,8 +1486,8 @@
       </div>
       <div class="why-text reveal">
         <p class="section-label">Por que Alefant</p>
-        <h2>Solidez en cada proyecto</h2>
-        <p>No solo construimos estructuras — construimos confianza.</p>
+        <h2>Solidez visible antes, durante y despues de la obra</h2>
+        <p>Un proyecto residencial de alto valor necesita orden, comunicacion y criterio. Esa es la experiencia que transmitimos.</p>
         <div class="why-items">
           <div class="why-item">
             <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
@@ -691,51 +1517,82 @@
 </section>
 
 <!-- PROCESS -->
-<section class="process" id="proceso">
+<section class="process process-atelier" id="proceso">
   <div class="container">
-    <div class="process-header reveal">
-      <p class="section-label">Proceso</p>
-      <h2>Como trabajamos</h2>
-      <span class="accent-line"></span>
+    <div class="section-head split-head reveal">
+      <div>
+        <p class="section-label">Proceso</p>
+        <h2>Un camino claro para decidir con confianza</h2>
+      </div>
+      <p>Cada proyecto se acompana con etapas definidas, imagenes de referencia, acuerdos claros y seguimiento para que el cliente sepa que esperar antes de iniciar obra.</p>
     </div>
-    <div class="process-steps">
-      <div class="process-step reveal stagger">
-        <div class="process-num">1</div>
-        <h3>Platiquemos</h3>
-        <p>Nos reunimos para entender tu vision, necesidades y presupuesto.</p>
-      </div>
-      <div class="process-step reveal stagger">
-        <div class="process-num">2</div>
-        <h3>Diseno y cotizacion</h3>
-        <p>Planos, materiales y presupuesto detallado sin compromisos.</p>
-      </div>
-      <div class="process-step reveal stagger">
-        <div class="process-num">3</div>
-        <h3>Manos a la obra</h3>
-        <p>Ejecucion profesional con reportes de avance constantes.</p>
-      </div>
-      <div class="process-step reveal stagger">
-        <div class="process-num">4</div>
-        <h3>Entrega</h3>
-        <p>Tu espacio listo, tal como lo imaginaste.</p>
+    <div class="process-layout">
+      <div class="process-steps">
+        <div class="process-step reveal stagger">
+          <figure class="process-step-photo">
+            <img src="images/facade.jpg" alt="Fachada residencial para entender vision y alcance" loading="lazy">
+          </figure>
+          <div class="process-step-body">
+            <div class="process-step-head">
+              <div class="process-num">1</div>
+              <h3>Descubrimiento</h3>
+            </div>
+            <p>Escuchamos vision, necesidades, alcance, tiempos y presupuesto objetivo.</p>
+          </div>
+        </div>
+        <div class="process-step reveal stagger">
+          <figure class="process-step-photo">
+            <img src="images/architecture.jpg" alt="Proyecto arquitectonico y seleccion de materiales" loading="lazy">
+          </figure>
+          <div class="process-step-body">
+            <div class="process-step-head">
+              <div class="process-num">2</div>
+              <h3>Proyecto y cotizacion</h3>
+            </div>
+            <p>Definimos materiales, planos, partidas y una ruta de ejecucion comprensible.</p>
+          </div>
+        </div>
+        <div class="process-step reveal stagger">
+          <figure class="process-step-photo">
+            <img src="images/construction.jpg" alt="Ejecucion y supervision de obra residencial" loading="lazy">
+          </figure>
+          <div class="process-step-body">
+            <div class="process-step-head">
+              <div class="process-num">3</div>
+              <h3>Ejecucion</h3>
+            </div>
+            <p>Coordinamos obra, proveedores, calidad y comunicacion de avances.</p>
+          </div>
+        </div>
+        <div class="process-step reveal stagger">
+          <figure class="process-step-photo">
+            <img src="images/interior.jpg" alt="Interior terminado listo para entrega" loading="lazy">
+          </figure>
+          <div class="process-step-body">
+            <div class="process-step-head">
+              <div class="process-num">4</div>
+              <h3>Entrega</h3>
+            </div>
+            <p>Cerramos con acabados, revision final y una experiencia lista para habitar.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- OLIVEWOOD ALLIANCE -->
-<section class="alliance">
+<section class="alliance alliance-premium">
   <div class="container">
     <div class="alliance-intro reveal">
       <p class="section-label">Alianza estrategica</p>
-      <h2>De los cimientos al ultimo mueble</h2>
-      <p>Dos empresas, una solucion completa.</p>
+      <h2>De los cimientos al ultimo detalle</h2>
+      <p>Grupo Alefant y Olivewood trabajan como una solucion integral, no como dos servicios separados.</p>
     </div>
-    <div class="alliance-grid reveal">
-      <div class="alliance-col alliance-alefant">
-        <span class="alliance-tag">Grupo Alefant</span>
-        <h3>Construimos la estructura</h3>
-        <p>Todo lo que es obra civil, estructura y construccion.</p>
+    <div class="alliance-composition reveal">
+      <div class="alliance-panel alliance-alefant">
+        <span>Grupo Alefant</span>
+        <h3>Obra civil, estructura y remodelacion</h3>
         <ul class="alliance-list">
           <li>Construccion nueva</li>
           <li>Remodelaciones</li>
@@ -743,13 +1600,13 @@
           <li>Diseno arquitectonico</li>
         </ul>
       </div>
-      <div class="alliance-img">
-        <img src="images/interior.jpg" alt="Interior de lujo" loading="lazy">
+      <div class="alliance-photo">
+        <img src="images/interior.jpg" alt="Interior residencial de lujo" loading="lazy">
+        <div class="alliance-ribbon">Solucion integral</div>
       </div>
-      <div class="alliance-col alliance-olivewood">
-        <span class="alliance-tag">Olivewood</span>
-        <h3>Disenamos los interiores</h3>
-        <p>Acabados, muebles y cada detalle que hace de una casa un hogar.</p>
+      <div class="alliance-panel alliance-olivewood">
+        <span>Olivewood</span>
+        <h3>Interiorismo, mobiliario y acabados</h3>
         <ul class="alliance-list">
           <li>Diseno de interiores</li>
           <li>Mobiliario a medida</li>
@@ -759,17 +1616,18 @@
       </div>
     </div>
     <div class="alliance-bottom reveal">
-      <p><strong>Una solucion integral</strong> — sin buscar multiples proveedores.</p>
+      <p><strong>Una sola vision</strong> para que la obra y el interior se sientan como parte del mismo proyecto.</p>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section" id="contacto">
+<section class="cta-section cta-editorial" id="contacto">
+  <div class="cta-photo" aria-hidden="true"></div>
   <div class="container cta-content reveal">
     <p class="section-label">Contacto</p>
-    <h2>Listo para empezar<br>tu proyecto?</h2>
-    <p>Escribenos por WhatsApp y platiquemos. La consulta inicial no tiene costo.</p>
+    <h2>Hablemos de la casa que quieres construir</h2>
+    <p>Un primer intercambio claro nos permite entender alcance, estilo, tiempos y ruta de trabajo.</p>
     <div class="cta-buttons">
       <a href="https://wa.me/525528848144?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20construcci%C3%B3n" target="_blank" rel="noopener" class="btn btn-dark">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -845,6 +1703,30 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); } });
 }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Service image director
+const serviceRows = document.querySelectorAll('.service-row');
+const serviceImage = document.getElementById('serviceImage');
+const serviceCaption = document.getElementById('serviceCaption');
+const serviceVisual = document.querySelector('.service-visual');
+const setServiceVisual = row => {
+  if (!serviceImage || !serviceCaption || !serviceVisual || row.classList.contains('active')) return;
+  serviceRows.forEach(item => item.classList.remove('active'));
+  row.classList.add('active');
+  serviceVisual.classList.add('is-changing');
+  const nextImage = row.dataset.image;
+  const nextCaption = row.dataset.caption;
+  window.setTimeout(() => {
+    serviceImage.src = nextImage;
+    serviceImage.alt = row.querySelector('h3')?.textContent || 'Servicio Grupo Alefant';
+    serviceCaption.textContent = nextCaption;
+    serviceVisual.classList.remove('is-changing');
+  }, 160);
+};
+serviceRows.forEach(row => {
+  row.addEventListener('mouseenter', () => setServiceVisual(row));
+  row.addEventListener('focus', () => setServiceVisual(row));
+});
 
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Cuestionario — Grupo Alefant</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f3f0;
+    color: #2d2d2d;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid #d4cfc8;
+  }
+
+  .header-logo {
+    width: 64px;
+    height: auto;
+    margin: 0 auto 12px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .header p {
+    font-size: 15px;
+    color: #6b6b6b;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .header .badge {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  /* Sections */
+  .section {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 1px solid #e8e4df;
+  }
+
+  .section-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50%;
+    margin-bottom: 12px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+
+  .section .section-desc {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  /* Questions */
+  .question {
+    margin-bottom: 28px;
+  }
+
+  .question:last-child {
+    margin-bottom: 0;
+  }
+
+  .question label {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+
+  .question .hint {
+    display: block;
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 10px;
+  }
+
+  .question textarea,
+  .question input[type="text"],
+  .question input[type="email"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background: #fafaf9;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    resize: vertical;
+  }
+
+  .question textarea:focus,
+  .question input[type="text"]:focus,
+  .question input[type="email"]:focus {
+    outline: none;
+    border-color: #1a1a1a;
+    box-shadow: 0 0 0 3px rgba(26,26,26,0.08);
+    background: #fff;
+  }
+
+  .question textarea {
+    min-height: 90px;
+  }
+
+  .question textarea.short {
+    min-height: 60px;
+  }
+
+  /* Submit button */
+  .submit-wrap {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 2px solid #d4cfc8;
+  }
+
+  .submit-wrap p {
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 16px;
+  }
+
+  .submit-wrap .thanks-msg {
+    font-size: 15px;
+    color: #6b6b6b;
+    margin-bottom: 24px;
+  }
+
+  button[type="submit"] {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 48px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    letter-spacing: 0.3px;
+  }
+
+  button[type="submit"]:hover {
+    background: #333;
+  }
+
+  button[type="submit"]:active {
+    transform: scale(0.98);
+  }
+
+  /* Required asterisk */
+  .required { color: #c0392b; }
+
+  /* Contact fields row */
+  .contact-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 600px) {
+    .contact-row { grid-template-columns: 1fr; }
+  }
+
+  /* Print styles */
+  @media print {
+    body { background: #fff; }
+    .container { padding: 20px; }
+    .section { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; }
+    .question textarea,
+    .question input[type="text"],
+    .question input[type="email"] {
+      border: 1px solid #ccc;
+      min-height: 70px;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container { padding: 20px 16px 60px; }
+    .section { padding: 24px 20px; }
+    .header h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<form action="https://formsubmit.co/renato@merolmedia.com" method="POST">
+
+  <!-- FormSubmit config -->
+  <input type="hidden" name="_subject" value="Cuestionario completado — Nuevo cliente">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://grupoalefant.com/cuestionario/gracias.html">
+  <input type="text" name="_honey" style="display:none">
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <svg class="header-logo" viewBox="0 0 2022 1881" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="translate(-263.287,-710.727)"><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(331.312,309.504)"><path d="M0,-21.321C1.908,-18.204 5.698,-12.508 8.078,-10.096C11.383,-6.748 14.26,-10.137 17.766,-12.107C19.397,-13.024 19.868,-13.467 21.091,-14.249C25.828,-17.279 24.141,-15.637 26.147,-13.255C26.747,-12.542 28.216,-12.35 28.744,-11.721C31.987,-7.861 35.591,-2.086 38.938,2.278C32.832,1.58 22.829,2.673 17.271,0.641C15.621,0.037 9.022,-5.609 7.359,-7.146C3.392,-10.811 -2.505,-16.883 -5.923,-21.004C-6.648,-21.879 -7.3,-22.343 -7.08,-23.681C-4.032,-23.381 -2.439,-23.994 0,-21.321" fill="#8FA4B3"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(63.189,170.575)"><path d="M0,87.141C39.25,58.501 81.053,28.557 120.702,0.219L121.383,0.071C196.57,14.412 273.353,29.231 348.285,44.513C273.039,30.972 196.188,16.322 121.049,1.811L121.729,1.663C111.699,8.762 85.895,27.006 76.174,33.849C51.047,51.544 25.229,69.656 0,87.141" fill="#121618" stroke="#000" stroke-width="5"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(341.981,581.985)"><path d="M0,-405.057C22.568,-372.865 43.551,-339.522 62.303,-304.955C71.338,-288.128 79.828,-270.946 86.868,-253.174C89.866,-245.5 92.675,-237.585 94.834,-229.621C96.505,-223.493 97.847,-217.263 98.531,-210.929C88.516,-157.348 76.291,-90.931 66.104,-38.59L77.702,-0.598L77.263,-0.921L102.02,-0.769L101.741,-0.589C105.764,-9.364 113.939,-26.713 117.989,-35.452C114.076,-26.773 106.232,-9.022 102.3,-0.334L102.22,-0.155L102.02,-0.154L77.263,-0.002L76.927,0L76.824,-0.325L64.868,-38.206L64.82,-38.357L64.849,-38.517C74.701,-92.632 86.615,-157.066 96.715,-211.13C95.823,-218.707 93.434,-229.111 90.706,-237.31C88.298,-244.836 85.441,-252.359 82.407,-259.664C74.961,-277.513 66.242,-294.817 57.028,-311.817C39.564,-343.796 20.374,-374.847 0,-405.057" fill="#121618" stroke="#000" stroke-width="5"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(457.575,565.703)"><path d="M0,-13.832L30.949,0L-0.707,-12.127L0,-13.832Z" fill="#121618" stroke="#000" stroke-width="5"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(479.313,621.13)"><path d="M0,-59.215L-27.983,0.757L-1.683,-59.972L0,-59.215Z" fill="#121618" stroke="#000" stroke-width="5"/></g></g><g transform="matrix(-4.167,0,0,4.167,3577.3,0)"><rect x="398.589" y="186.85" width="61.374" height="0.923" fill="#121618" stroke="#000" stroke-width="5"/></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(399.797,423.027)"><path d="M0,182.176C-5.991,168.662 -11.982,154.696 -17.786,141.074L-23.606,127.328L-23.663,127.193C-24.668,90.122 -25.382,52.975 -25.545,15.885C-25.564,11.941 -25.567,7.919 -25.561,3.972L-25.548,0L-25.366,3.968C-25.192,7.92 -25.027,11.927 -24.878,15.871C-23.471,52.883 -22.612,89.972 -22.046,127L-22.107,126.707C-20.307,131.123 -15.447,143.145 -13.712,147.464C-9.111,158.93 -4.447,170.665 0,182.176" fill="#121618" stroke="#000" stroke-width="5"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(335.491,370.989)"><path d="M0,20.059C-23.526,16.388 -47.113,11.659 -69.795,4.335C-72.214,3.488 -74.637,2.604 -76.93,1.444C-77.678,1.036 -78.463,0.634 -79.047,0C-78.396,0.551 -77.593,0.868 -76.813,1.19C-74.443,2.119 -71.981,2.789 -69.528,3.467C-46.462,9.451 -23.073,14.074 0,20.059" fill="#121618" stroke="#000" stroke-width="5"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(282.394,470.441)"><path d="M0,-171.428C-8.496,-160.474 -14.257,-146.516 -14.99,-132.619C-15.187,-128.964 -15.494,-123.981 -15.738,-120.288C-18.229,-83.81 -21.262,-47.306 -24.831,-10.92C-25.128,-7.953 -25.625,-2.99 -25.95,-0.001C-25.95,0 -25.64,-5.48 -25.64,-5.48C-25.448,-8.688 -25.175,-13.293 -24.972,-16.435C-23.053,-47.068 -20.642,-78.796 -18.286,-109.47C-17.747,-116.449 -17.029,-125.812 -16.556,-132.714C-16.461,-134.1 -16.308,-135.483 -16.116,-136.859C-14.287,-149.464 -8.421,-161.897 0,-171.428" fill="#121618" stroke="#000" stroke-width="5"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(89.821,348.566)"><path d="M0,-109.268L14.41,0L-1.828,-109.011L0,-109.268Z" fill="#121618" stroke="#000" stroke-width="5"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(76.76,432.878)"><path d="M0,-152.861C8.181,-140.827 24.468,-116.728 32.612,-104.69C48.191,-91.63 64.334,-77.749 79.966,-64.256C95.254,-51.028 111.831,-36.577 126.933,-23.249C138.753,-19.585 157.92,-13.102 170.78,-8.879C178.621,-6.28 189.377,-2.66 197.202,0C192.73,-1.352 183.871,-4.019 179.417,-5.388C162.581,-10.53 142.903,-16.668 126.031,-21.959C110.711,-35.093 94.044,-49.582 78.799,-62.915C63.154,-76.621 47.566,-90.391 32.101,-104.302C24.122,-116.371 7.964,-140.769 0,-152.861" fill="#121618" stroke="#000" stroke-width="5"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(324.282,399.495)"><path d="M0,-42.539C6.638,-29.071 12.923,-15.411 19.103,-1.73L17.764,-2.088L21.145,-4.575C36.942,-16.137 52.879,-27.567 69.081,-38.557C70.241,-39.341 71.403,-40.121 72.57,-40.895C71.475,-40.023 70.376,-39.156 69.273,-38.293C53.841,-26.246 38.071,-14.587 22.218,-3.102C21.647,-2.708 18.446,-0.37 17.915,0C16.262,-3.772 14.616,-7.554 12.988,-11.337C8.543,-21.674 4.148,-32.077 0,-42.539" fill="#121618" stroke="#000" stroke-width="5"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(368.572,467.707)"><path d="M0,-88.514C41.232,-41.869 149.34,-6.651 149.34,-6.651C149.34,-6.651 46.227,0 -26.001,-69.58" fill="#FFF"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(368.572,462.401)"><path d="M0,-83.208C7.242,-75.282 15.574,-68.426 24.277,-62.172C35.173,-54.379 46.733,-47.501 58.527,-41.166C68.757,-35.673 79.223,-30.591 89.802,-25.806C109.355,-17.015 129.308,-9.067 149.625,-2.218L154.199,-0.713C144.632,0 134.959,-0.188 125.408,-0.849C84.681,-3.769 44.08,-15.11 9.202,-36.649C4.157,-39.798 -0.862,-43.196 -5.624,-46.753C-12.795,-52.12 -19.628,-57.996 -26.001,-64.274" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(433.551,444.642)"><path d="M0,-41.205C3.78,-38.166 7.864,-35.412 12.059,-32.977C24.696,-25.648 38.471,-20.511 52.417,-16.286C71.062,-10.77 90.189,-6.801 109.478,-4.362L114.821,-3.749L109.594,-2.548L109.469,-2.519C108.298,-2.269 107.111,-2.08 105.928,-1.923C90.211,0 74.262,-1.75 58.807,-4.815C49.995,-6.626 41.031,-9.044 32.488,-11.862C20.438,-15.834 8.612,-20.646 -2.801,-26.161C7.72,-21.599 18.454,-17.481 29.367,-13.99C41.381,-10.165 53.761,-7.035 66.222,-5.098C78.078,-3.262 90.15,-2.344 102.121,-3.349C104.199,-3.539 106.269,-3.783 108.316,-4.167L108.747,-4.252L108.959,-4.297L109.063,-4.32L109.159,-4.342L109.275,-2.528C108.045,-2.67 106.838,-2.829 105.624,-2.995C89.89,-5.194 74.296,-8.439 59.014,-12.788C38.717,-18.69 16.106,-27.233 0,-41.205" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(329.477,336.042)"><path d="M0,-45.75C3.297,-45.891 4.658,-43.895 4.658,-43.895L12.45,-32.783C15.171,-29.369 18.271,-31.588 18.271,-31.588L27.244,-37.268C29.723,-38.868 29.748,-37.613 29.748,-37.613C30.65,-35.143 31.927,-34.82 31.927,-34.82C33.102,-34.64 33.578,-33.919 33.578,-33.919L66.19,13.118C52.486,-35.928 21.632,-58.868 21.632,-58.868L-15.23,-48.562C-15.23,-48.562 -18.146,-47.845 -15.486,-46.918C-15.486,-46.918 -13.016,-46.157 -11.682,-46.359C-10.348,-46.562 0,-45.75 0,-45.75" fill="#2B4F6C"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(350.838,261.279)"><path d="M0,16.798L-47.061,0L0.302,15.926L0,16.798Z" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(323.419,290.358)"><path d="M0,-6.909L-29.647,0.889L-0.248,-7.798L0,-6.909Z" fill="#121618"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(258.048,190.685)"><path d="M0,41.509L-82.949,-0.513L0.818,39.854C1.901,40.428 1.139,42.022 0,41.509" fill="#121618" stroke="#000" stroke-width="5"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(258.199,204.514)"><path d="M0,27.738L-92.958,-0.305L0.516,25.966C1.682,26.342 1.211,28.043 0,27.738" fill="#121618" stroke="#000" stroke-width="5"/></g></g><g transform="matrix(4.167,0,0,4.167,0,0)"><g transform="translate(259.274,304.075)"><path d="M0,-73.139L13.111,-47.54L13.216,-47.335C13.193,-47.063 0.516,0.82 0.48,1.088L12.026,-47.409L12.076,-46.994L-1.633,-72.278C-2.176,-73.376 -0.624,-74.227 0,-73.139" fill="#121618" stroke="#000" stroke-width="5"/></g></g></g></svg>
+    <div class="badge">Confidencial</div>
+    <h1>Conociendo tu negocio</h1>
+    <p>Este cuestionario nos ayuda a entender tu empresa a fondo para comunicarla de la mejor manera. No hay respuestas correctas o incorrectas — entre mas detalle, mejor.</p>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECCION 0: Datos de contacto -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-number">&#9993;</div>
+    <h2>Tus datos</h2>
+    <p class="section-desc">Para saber quien nos escribe.</p>
+
+    <div class="contact-row">
+      <div class="question">
+        <label>Nombre completo <span class="required">*</span></label>
+        <input type="text" name="Nombre" required>
+      </div>
+      <div class="question">
+        <label>Correo electronico <span class="required">*</span></label>
+        <input type="email" name="Email" required>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECCION 1: Tu empresa -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-number">1</div>
+    <h2>Tu empresa</h2>
+    <p class="section-desc">Lo basico: quien eres, que haces, y como funciona tu negocio.</p>
+
+    <div class="question">
+      <label>¿Como describirias tu empresa en una o dos frases a alguien que no la conoce?</label>
+      <span class="hint">Como si se lo explicaras a un amigo en una comida.</span>
+      <textarea name="01 Descripcion de empresa"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Que servicios o productos ofreces exactamente?</label>
+      <span class="hint">Lista todo lo que haces, aunque sean cosas pequenas.</span>
+      <textarea name="02 Servicios o productos"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Cual es el servicio que mas vendes o el que mas dinero te genera?</label>
+      <textarea class="short" name="03 Servicio principal"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Cual es el servicio que mas te gustaria vender (aunque hoy no sea el principal)?</label>
+      <textarea class="short" name="04 Servicio deseado"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿En que zona geografica operas? ¿Trabajas solo local o tambien a distancia?</label>
+      <textarea class="short" name="05 Zona geografica"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Cuantas personas trabajan en tu empresa y como esta organizada?</label>
+      <span class="hint">No necesitamos un organigrama — solo una idea general.</span>
+      <textarea class="short" name="06 Equipo y organizacion"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Cuantos anos llevas operando?</label>
+      <input type="text" name="07 Anos operando">
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECCION 2: Tus clientes -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-number">2</div>
+    <h2>Tus clientes</h2>
+    <p class="section-desc">Entender a quien le vendes es la base de todo.</p>
+
+    <div class="question">
+      <label>¿Quien es tu cliente ideal? Describelo como si fuera una persona real.</label>
+      <span class="hint">Edad, genero, donde vive, a que se dedica, nivel economico, estilo de vida...</span>
+      <textarea name="08 Cliente ideal"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Que quiere lograr tu cliente cuando te busca? ¿Cual es su meta o deseo?</label>
+      <span class="hint">No lo que compra, sino lo que realmente quiere conseguir con eso.</span>
+      <textarea name="09 Meta del cliente"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Que problema o frustracion tiene tu cliente ANTES de encontrarte?</label>
+      <span class="hint">Piensa en lo que les quita el sueno o les causa estres.</span>
+      <textarea name="10 Problema del cliente"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Que miedos o dudas tiene tu cliente antes de contratarte?</label>
+      <span class="hint">Ej: "que me salga mas caro de lo que me dijeron", "que no quede bien", "que se tarden mucho"...</span>
+      <textarea name="11 Miedos del cliente"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Como llegan tus clientes a ti normalmente?</label>
+      <span class="hint">Referidos, redes sociales, Google, boca en boca, etc.</span>
+      <textarea class="short" name="12 Como llegan clientes"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Hay algun tipo de cliente que NO quieras atender?</label>
+      <textarea class="short" name="13 Clientes que no quiere"></textarea>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECCION 3: Lo que te hace diferente -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-number">3</div>
+    <h2>Lo que te hace diferente</h2>
+    <p class="section-desc">Por que alguien te elegiria a ti sobre las demas opciones.</p>
+
+    <div class="question">
+      <label>¿Quienes son tus principales competidores (directos o indirectos)?</label>
+      <span class="hint">Pueden ser empresas, freelancers, o incluso "que el cliente lo haga solo".</span>
+      <textarea name="14 Competidores"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Que haces mejor que ellos? ¿O que haces diferente?</label>
+      <textarea name="15 Diferenciadores"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Que es lo que mas te dicen tus clientes satisfechos? ¿Que destacan?</label>
+      <span class="hint">Si tienes resenas o testimonios en mente, mencionalo.</span>
+      <textarea name="16 Testimonios"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Tienes credenciales, certificaciones, premios o trayectoria que respalden tu trabajo?</label>
+      <textarea class="short" name="17 Credenciales"></textarea>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECCION 4: Tu proceso de trabajo -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-number">4</div>
+    <h2>Tu proceso de trabajo</h2>
+    <p class="section-desc">Saber como trabajas nos ayuda a explicarlo claramente en tu comunicacion.</p>
+
+    <div class="question">
+      <label>¿Cuales son los pasos que sigue un cliente desde que te contacta hasta que termina el proyecto?</label>
+      <span class="hint">Describelo paso a paso, en orden. Ej: "1. Nos contactan por WhatsApp, 2. Agendamos visita, 3. Mandamos cotizacion..."</span>
+      <textarea name="18 Proceso de trabajo"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Cuanto tiempo toma normalmente un proyecto de principio a fin?</label>
+      <span class="hint">Puede ser un rango. Ej: "2 a 6 meses dependiendo del tamano".</span>
+      <textarea class="short" name="19 Tiempo de proyecto"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Que informacion o cosas necesitas del cliente para poder empezar?</label>
+      <textarea class="short" name="20 Requisitos para empezar"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Cuales son las preguntas que te hacen MAS SEGUIDO tus clientes?</label>
+      <span class="hint">Las dudas tipicas, las que escuchas una y otra vez.</span>
+      <textarea name="21 Preguntas frecuentes"></textarea>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECCION 5: Resultados y transformacion -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-number">5</div>
+    <h2>Resultados y transformacion</h2>
+    <p class="section-desc">Como cambia la vida de tu cliente despues de trabajar contigo.</p>
+
+    <div class="question">
+      <label>¿Como se ve la vida o situacion de tu cliente DESPUES de trabajar contigo?</label>
+      <span class="hint">Piensa en el "final feliz". ¿Que tienen ahora que antes no?</span>
+      <textarea name="22 Resultado final"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Que pasa si el cliente NO resuelve su problema? ¿Que se pierde o que riesgo corre?</label>
+      <span class="hint">No para asustar — sino para entender que esta en juego.</span>
+      <textarea name="23 Riesgo de no actuar"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Tienes algun caso de exito o proyecto que te de mucho orgullo? Cuentalo brevemente.</label>
+      <textarea name="24 Caso de exito"></textarea>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECCION 6: Marca y comunicacion -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-number">6</div>
+    <h2>Marca y comunicacion</h2>
+    <p class="section-desc">Como quieres que te perciban y como hablas con tus clientes.</p>
+
+    <div class="question">
+      <label>Si tu marca fuera una persona, ¿como seria? ¿Que personalidad tendria?</label>
+      <span class="hint">Ej: "seria como un ingeniero serio pero amable", "como un amigo que sabe mucho de construccion"...</span>
+      <textarea name="25 Personalidad de marca"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Hay palabras, frases o ideas que NO quieres asociar con tu marca?</label>
+      <span class="hint">Ej: "barato", "low cost", algo que te aleje de como quieres ser percibido.</span>
+      <textarea class="short" name="26 Palabras a evitar"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Hay alguna marca (de cualquier industria) cuyo estilo admires? ¿Por que?</label>
+      <textarea class="short" name="27 Marcas que admira"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Tienes logo, colores definidos, o algun material de marca existente?</label>
+      <textarea class="short" name="28 Material de marca"></textarea>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECCION 7: Digital y objetivos -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-number">7</div>
+    <h2>Presencia digital y objetivos</h2>
+    <p class="section-desc">Donde estas hoy y a donde quieres llegar.</p>
+
+    <div class="question">
+      <label>¿Tienes sitio web? Si si, ¿que te gusta y que no te gusta de el?</label>
+      <textarea class="short" name="29 Sitio web actual"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿En que redes sociales tienes presencia? ¿Cuales funcionan mejor?</label>
+      <textarea class="short" name="30 Redes sociales"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Que resultado concreto quieres lograr con tu presencia digital en los proximos 6 meses?</label>
+      <span class="hint">Ej: "generar 10 cotizaciones al mes", "que me encuentren en Google", "tener un sitio que de confianza"...</span>
+      <textarea name="31 Objetivo digital"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Hay algo que hayas intentado antes en marketing o digital que NO funciono?</label>
+      <textarea class="short" name="32 Que no funciono"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Cual es tu presupuesto mensual aproximado para marketing digital?</label>
+      <span class="hint">Esto es confidencial y nos ayuda a hacer recomendaciones realistas.</span>
+      <input type="text" name="33 Presupuesto marketing">
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SECCION 8: Cierre -->
+  <!-- ============================================ -->
+  <div class="section">
+    <div class="section-number">8</div>
+    <h2>Para cerrar</h2>
+    <p class="section-desc">Lo que no preguntamos pero quieres que sepamos.</p>
+
+    <div class="question">
+      <label>¿Hay algo mas que quieras que sepamos sobre tu negocio, tu vision o tus planes?</label>
+      <textarea name="34 Algo mas"></textarea>
+    </div>
+
+    <div class="question">
+      <label>¿Cual es la cosa MAS IMPORTANTE que quieres que la gente entienda sobre tu empresa?</label>
+      <textarea name="35 Lo mas importante"></textarea>
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <div class="submit-wrap">
+    <p class="thanks-msg">Tus respuestas nos ayudan a crear algo que realmente represente tu negocio.<br>Cualquier duda, estamos a un mensaje de distancia.</p>
+    <button type="submit">Enviar cuestionario</button>
+    <p>Al dar clic, tus respuestas se envian de forma segura a nuestro equipo.</p>
+  </div>
+
+</div>
+
+</form>
+
+</body>
+</html>
